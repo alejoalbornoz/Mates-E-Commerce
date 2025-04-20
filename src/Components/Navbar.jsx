@@ -10,7 +10,7 @@ function Navbar (){
         <div className={style.menubar}>
             <nav className={style.enlaces}>
 
-                <h2>MATEus Amargo</h2>
+                <h2>MATErazzi</h2>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
