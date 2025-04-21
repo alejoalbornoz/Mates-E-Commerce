@@ -1,0 +1,81 @@
+.containerHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 200px;
+  height: 100vh;
+  width: 60%;
+  margin-left: 250px;
+}
+
+.textHome {
+  font-family: "Lexend", sans-serif;
+}
+
+.textHome h1 {
+  font-size: 4rem;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: italic;
+  text-align: left;
+}
+
+.textHome p {
+  font-size: 1rem;
+  font-family: "Lexend", sans-serif;
+  width: 60%;
+  color: #ffffffb6;
+  text-align: left;
+}
+
+.btnShopHome {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btnShopHome button {
+  font-family: "Lexend", sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnShopNow {
+  background-color: #ffb700;
+  color: #000000;
+  border: none;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnExplore {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnShopNow:hover {
+  background-color: #ffb700d7;
+  transform: scale(1.05);
+}
+
+.btnExplore:hover {
+    background-color: #ffffff1a;
+    transform: scale(1.05);
+}
+
+
+.imgMajor img{
+  width: 45%;
+  height: auto;
+  border-radius: 20px;
+}
