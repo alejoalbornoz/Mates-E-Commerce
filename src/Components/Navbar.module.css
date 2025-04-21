@@ -1,42 +1,84 @@
 .menubar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background-color: transparent;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
 }
 
 .enlaces {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  color: white;
+}
+
+.enlaces h2 {
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .enlaces ul {
-  display: flex;
   list-style: none;
+  display: flex;
+  gap: 30px;
   margin: 0;
   padding: 0;
-}
-
-.enlaces ul li {
-  margin: 0 50px;
+  position: absolute;
+  left: 70%;
+  transform: translateX(-50%);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
 }
 
 .enlaces ul li a {
+  position: relative;
   text-decoration: none;
   color: white;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: all 0.3s;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.enlaces ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 100%;
+  width: 0%;
+  height: 2px;
+  background-color: #ffb700;
+  transition: all 0.4s ease;
 }
 
 .enlaces ul li a:hover {
-  font-size: 17px;
+  color: #ffb700;
+}
+
+.enlaces ul li a:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.btnmenu {
+  display: flex;
+  gap: 15px;
+}
+
+.btnmenu a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnmenu a:hover {
+  color: #ffb700;
+  transform: scale(1.1);
 }
