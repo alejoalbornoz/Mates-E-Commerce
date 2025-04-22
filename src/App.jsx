@@ -1,7 +1,8 @@
 
 import './App.css'
 import Navbar from "/src/components/Navbar.jsx"
-import Home from "/src/pages/Home.jsx"
+import Home from "/src/pages/Home/Home.jsx"
+import SliderProducts from  "/src/pages/SliderProducts/SliderProducts.jsx"
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <Navbar/>
       <Home/>
+      <SliderProducts/>
     </>
   )
 }

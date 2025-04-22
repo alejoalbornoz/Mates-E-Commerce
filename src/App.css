@@ -1,4 +1,6 @@
 body{
-  background-color: #3c5e50;
+  /* background: linear-gradient(135deg, #2e4f45, #4a7062); */
+  background: linear-gradient(135deg, #3b5c4c, #8aaf83);
+
   scroll-behavior: smooth;
 }
