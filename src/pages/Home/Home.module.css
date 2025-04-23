@@ -81,15 +81,51 @@
 }
 
 
+
+.imgMajor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
+
 .imgMajor img{
   width: 70%;
   height: auto;
   border-radius: 20px;
   margin-top: -70px;
-  margin-right: 140px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   
 }
+
+
+.imgMajor button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+
+}
+
+.imgMajor .btnDerecho{
+  right: 0;
+}
+
+.imgMajor .btnIzquierdo{
+  left: 0;
+}
+
+
 
 .leftSide {
   display: flex;
