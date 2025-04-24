@@ -3,33 +3,35 @@ import { data } from "../../assets/data";
 import { useEffect, useRef, useState } from "react";
 
 function Home() {
-  // const listRef = useRef();
-  // const [currentIndex, setCurrentIndex] = useState(0);
+  const listRef = useRef();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const listNode = listRef.current;
-  //   const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
+  useEffect(() => {
+    const listNode = listRef.current;
+    const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
 
-  //   if (imgNode) {
-  //     imgNode.scrollIntoView({
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // }, [currentIndex]);
+    if (imgNode) {
+      imgNode.scrollIntoView({
+        behavior: "smooth",
+          block: "nearest",
+          inline: "center"
+      });
+    }
+  }, [currentIndex]);
 
-  // const scrollToImage = (direction) => {
-  //   if (direction === "prev") {
-  //     setCurrentIndex((curr) => {
-  //       const isFirstSlide = currentIndex === 0;
-  //       return isFirstSlide ? 0 : curr - 1;
-  //     });
-  //   } else {
-  //     const isLastSlide = currentIndex === data.length - 1;
-  //     if (!isLastSlide) {
-  //       setCurrentIndex((curr) => curr + 1);
-  //     }
-  //   }
-  // };
+  const scrollToImage = (direction) => {
+    if (direction === "prev") {
+      setCurrentIndex((curr) => {
+        const isFirstSlide = currentIndex === 0;
+        return isFirstSlide ? 0 : curr - 1;
+      });
+    } else {
+      const isLastSlide = currentIndex === data.length - 1;
+      if (!isLastSlide) {
+        setCurrentIndex((curr) => curr + 1);
+      }
+    }
+  };
 
   return (
     <div className={style.containerHome}>
@@ -44,12 +46,12 @@ function Home() {
         </div>
       </div>
 
-      {/* <div className='leftArrow' onClick={()=> scrollToImage("prev")}>&#10092;</div>
-      <div className='rightArrow' onClick={()=> scrollToImage("next")}>&#10093;</div> */}
+      <button className={`bi bi-caret-left-fill ${style.leftArrow}`} onClick={()=> scrollToImage("prev")}></button>
+      <button className={`bi bi-caret-right-fill ${style.rightArrow}`} onClick={()=> scrollToImage("next")}></button>
 
 
       <div className={style.imgMajor}>
-        {/* <ul ref={listRef}>
+        <ul ref={listRef}>
           {data.map((item) => {
             return (
               <li key={item.id} className="image-item">
@@ -57,7 +59,7 @@ function Home() {
               </li>
             );
           })}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );
