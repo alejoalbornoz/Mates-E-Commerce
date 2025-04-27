@@ -32,6 +32,13 @@
   text-align: left;
 }
 
+
+.leftSide h2{
+  font-family: "Lexend", sans-serif;
+  color: #ffffffb6;
+  font-size: 1.5rem;
+}
+
 .btnShopHome {
   display: flex;
   justify-content: flex-start;
@@ -127,19 +134,17 @@
   background-color: transparent;
   font-size: 30px;
   border: none;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 2;
 }
 
 .leftArrow {
-  left: 10px;
+  left: 1080px;
 }
-
 .rightArrow {
-  right: 10px;
+  right: 240px;
 }
-
 
 
 .leftSide {

@@ -38,13 +38,21 @@ function Home() {
       <div className={style.leftSide}>
         <div className={style.textHome}>
           <h1>El Rincón del Mate</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe ex nobis ab alias amet, placeat, explicabo ratione possimus blanditiis odio asperiores obcaecati minus deserunt sit, itaque voluptas? Velit deleniti est minus beatae officiis placeat expedita sit ea? Quos, ipsam, a quibusdam nobis dolor quis dignissimos, possimus nesciunt nemo beatae quia adipisci. Earum consequatur repudiandae facere itaque quia. Temporibus explicabo dolores reiciendis sed ratione rem quod. Praesentium illo suscipit nulla enim animi ut nesciunt sapiente eveniet at beatae, dolore odit mollitia libero velit nam aliquid dignissimos sit nobis dolorem! Nihil debitis ut alias delectus tempora dolorum corrupti totam consequatur nostrum.</p>
+          <p>Bienvenidos a El Rincón del Mate, un espacio donde la pasión por el mate se convierte en arte. 🧉 Cada uno de nuestros productos está pensado para acompañarte en tus momentos de calma, charla o estudio. Diseñamos mates únicos, combinando tradición y estilo moderno, con materiales de calidad que garantizan durabilidad y un toque especial. Creemos que el mate no es solo una bebida, sino un ritual, una forma de conexión. Por eso, cuidamos cada detalle, desde el diseño hasta la entrega. Unite a esta comunidad matera y llevá un pedacito de nuestra esencia a tu día a día.</p>
         </div>
         <div className={style.btnShopHome}>
           <button className={style.btnShopNow}>Shop now</button>
           <button className={style.btnExplore}>Explore</button>
+          
         </div>
+        <br />
+        <h2>Nuevo diseño artesanal, <br/> capturando los hermosos momentos de tu día a día</h2>
+
+
+
+
       </div>
+      
 
       <button className={`bi bi-caret-left-fill ${style.leftArrow}`} onClick={()=> scrollToImage("prev")}></button>
       <button className={`bi bi-caret-right-fill ${style.rightArrow}`} onClick={()=> scrollToImage("next")}></button>
