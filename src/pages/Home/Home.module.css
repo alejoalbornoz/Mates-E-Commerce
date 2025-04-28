@@ -33,10 +33,27 @@
 }
 
 
-.leftSide h2{
+.textBelowHome{
+  display: flex;
+  width: 100%;
+  margin-left: -30px;
+
+  padding-top: 40px;
+  align-items: center;
+  justify-content: left;
+}
+
+.textBelowHome h2{
   font-family: "Lexend", sans-serif;
   color: #ffffffb6;
   font-size: 1.5rem;
+  margin-top: 40px;
+  margin-left: -30px;
+}
+
+.textBelowHome img{
+  width: 140px;
+  height: 140px;
 }
 
 .btnShopHome {

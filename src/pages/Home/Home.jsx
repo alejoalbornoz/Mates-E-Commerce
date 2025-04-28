@@ -46,7 +46,11 @@ function Home() {
           
         </div>
         <br />
-        <h2>Nuevo diseño artesanal, <br/> capturando los hermosos momentos de tu día a día</h2>
+        <div className={style.textBelowHome}>
+          <img src="src/assets/images/matevector.png" alt="" />
+          <h2>Nuevo diseño artesanal, <br/> capturando los hermosos momentos de tu día a día</h2>
+        </div>
+       
 
 
 
