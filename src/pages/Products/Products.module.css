@@ -1,0 +1,44 @@
+.containerSlider{
+    width: auto;
+    height: 100vh;  
+
+}
+
+.containerProducts{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.containerProducts h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+    font-style: italic;
+}
+
+.imagesVector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Espacio entre grupos */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Por si en pantallas chicas no entra todo */
+  }
+  
+  .imageGroup {
+    display: flex;
+    align-items: center;
+    gap: 200px; /* Espacio entre imagen y flecha */
+  }
+  
+  .imageGroup i {
+    font-size: 40px;
+    color: white;
+  }
+  

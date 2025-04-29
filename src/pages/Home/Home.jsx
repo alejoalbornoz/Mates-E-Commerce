@@ -44,7 +44,7 @@ function Home() {
           <button className={style.btnShopNow}>Shop now</button>
           <button className={style.btnExplore}>Explore</button>
           
-        </div>
+        </div> 
         <br />
         <div className={style.textBelowHome}>
           <img src="src/assets/images/matevector.png" alt="" />

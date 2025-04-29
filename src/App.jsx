@@ -2,7 +2,7 @@
 import './App.css'
 import Navbar from "/src/components/Navbar.jsx"
 import Home from "/src/pages/Home/Home.jsx"
-import SliderProducts from  "/src/pages/SliderProducts/SliderProducts.jsx"
+import Products from  "/src/pages/Products/Products.jsx"
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <>
       <Navbar/>
       <Home/>
-      <SliderProducts/>
+      <Products/>
     </>
   )
 }
