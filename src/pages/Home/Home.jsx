@@ -41,8 +41,8 @@ function Home() {
           <p>Bienvenidos a El Rincón del Mate, un espacio donde la pasión por el mate se convierte en arte. 🧉 Cada uno de nuestros productos está pensado para acompañarte en tus momentos de calma, charla o estudio. Diseñamos mates únicos, combinando tradición y estilo moderno, con materiales de calidad que garantizan durabilidad y un toque especial. Creemos que el mate no es solo una bebida, sino un ritual, una forma de conexión. Por eso, cuidamos cada detalle, desde el diseño hasta la entrega. Unite a esta comunidad matera y llevá un pedacito de nuestra esencia a tu día a día.</p>
         </div>
         <div className={style.btnShopHome}>
-          <button className={style.btnShopNow}>Shop now</button>
-          <button className={style.btnExplore}>Explore</button>
+          <button className={style.btnShopNow}>Comprar ahora</button>
+          <button className={style.btnExplore}>Contacto</button>
           
         </div> 
         <br />

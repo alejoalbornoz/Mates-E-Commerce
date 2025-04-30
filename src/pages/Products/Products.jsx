@@ -119,8 +119,88 @@ function Products() {
             </div>
 
             <div className={style.textLeft}>
-              <h3>Bombilla Pico de Loro</h3>
+              <h3>Bombilla Pico de Loro de Alpaca</h3>
               <p>$14000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* OFERTAS DESTACADAS */}
+      <div className={style.containerProductsMates}>
+        <div className={style.productMate}>
+          <div className={style.imageMate}>
+            <div className={style.headerCenter}>
+              <h2>
+                Oferta destacada <i className="bi bi-tag-fill"></i>
+              </h2>
+            </div>
+
+            <div className={style.containerDestacado}>
+              <img
+                src="./src/assets/images/mateoferta.png"
+                alt=""
+                style={{ width: "300px", height: "auto" }}
+              />
+            </div>
+
+            <div className={style.textLeft}>
+              <h3>2x1 Mate imperial personalizado</h3>
+              <p>$38000</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={style.productMate}>
+          <div className={style.imageMate}>
+            <div className={style.headerCenter}>
+              <h2>
+                Oferta destacada <i className="bi bi-tag-fill"></i>
+              </h2>
+            </div>
+
+            <div className={style.containerDestacado}>
+              <img
+                src="./src/assets/images/ofertayerba.png"
+                alt=""
+                style={{
+                  width: "300px",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+
+            <div className={style.textLeft}>
+              <h3>2x1 Yerba Canarias 1kg</h3>
+              <p>$16000</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={style.productMate}>
+          <div className={style.imageMate}>
+            <div className={style.headerCenter}>
+              <h2>
+                Oferta destacada <i className="bi bi-tag-fill"></i>
+              </h2>
+            </div>
+
+            <div className={style.containerDestacado}>
+              <img
+                src="./src/assets/images/bombillaoferta.png"
+                alt=""
+                style={{
+                  width: "200px",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+
+            <div className={style.textLeft}>
+              <h3>Bombilla Económica</h3>
+              <p>$6000</p>
             </div>
           </div>
         </div>
