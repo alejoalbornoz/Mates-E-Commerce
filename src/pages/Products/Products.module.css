@@ -1,44 +1,161 @@
-.containerSlider{
+.containerSlider {
     width: auto;
-    height: 100vh;  
-
-}
-
-.containerProducts{
-    
+    height: 200vh;
+  }
+  
+  .containerProducts {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-}
-
-.containerProducts h2{
+    margin-top: 50px;
+  }
+  
+  .containerProducts h2 {
     font-size: 40px;
     margin-bottom: 20px;
     color: white;
     text-align: center;
     font-family: "PT Sans", sans-serif;
     font-style: italic;
-}
-
-.imagesVector {
+  }
+  
+  .imagesVector {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px; /* Espacio entre grupos */
+    gap: 60px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Por si en pantallas chicas no entra todo */
+    flex-wrap: wrap;
   }
   
   .imageGroup {
     display: flex;
     align-items: center;
-    gap: 200px; /* Espacio entre imagen y flecha */
+    gap: 200px;
   }
   
   .imageGroup i {
     font-size: 40px;
     color: white;
+  }
+  
+  .descriptionVector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .descriptionVector h3 {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+  }
+  
+  .descriptionGroup {
+    display: flex;
+    align-items: center;
+    gap: 350px;
+  }
+  
+  .descriptionMate {
+    margin-left: -20px;
+  }
+  
+  .descriptionYerba {
+    transform: translateX(40px);
+  }
+  
+  .descriptionBombilla {
+    transform: translateX(60px);
+  }
+  
+  /* PRODUCTOS DESTACADOS */
+  
+  .containerProductsMates {
+    margin-top: 100px;
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .productMate {
+    display: flex;
+    gap: 20px;
+    width: 400px;
+    height: 600px;
+  }
+  
+  .imageMate {
+    width: 350px;
+    height: 550px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* CENTRADO DEL h2 */
+  .headerCenter {
+    text-align: center;
+  }
+  
+  .headerCenter h2 {
+    color: white;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .imageMate i {
+    color: rgb(255, 255, 97);
+    padding-left: 10px;
+  }
+  
+  .containerDestacado {
+    background-color: #206047;
+    height: 400px;
+    max-width: 500px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  /* ALINEADO A LA IZQUIERDA h3 y p */
+  .textLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    text-align: left;
+  }
+  
+  .textLeft h3 {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 350;
+    margin-top: 10px;
+  }
+  
+  .textLeft p {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    transform: translateY(-30px);
   }
   
