@@ -36,7 +36,7 @@ function Products() {
 
         <div className={style.descriptionVector}>
           <div className={style.descriptionGroup}>
-            <h3 className={style.descriptionMate}>Mate</h3>
+            <h3 className={style.descriptionMate}>Mate <p></p></h3>
             <h3 className={style.descriptionYerba}>Yerba</h3>
             <h3 className={style.descriptionBombilla}>Bombilla</h3>
           </div>

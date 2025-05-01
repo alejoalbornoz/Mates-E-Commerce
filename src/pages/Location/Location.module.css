@@ -1,0 +1,37 @@
+.containerLocation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: -200px;
+}
+
+.containerLocation h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+}
+
+.containerLocation p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}

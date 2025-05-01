@@ -15,10 +15,10 @@ function Navbar (){
                 
                 <h2>El Rincón del Mate</h2>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Contact us</a></li>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Productos</a></li>
+                    <li><a href="">Ofertas</a></li>
+                    <li><a href="">Contacto</a></li>
                 </ul>
 
                 <div className={style.btnmenu}>
