@@ -1,161 +1,232 @@
 .containerSlider {
-    width: auto;
-    height: 200vh;
-  }
-  
-  .containerProducts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
-  }
-  
-  .containerProducts h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: white;
-    text-align: center;
-    font-family: "PT Sans", sans-serif;
-    font-style: italic;
-  }
-  
-  .imagesVector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .imageGroup {
-    display: flex;
-    align-items: center;
-    gap: 200px;
-  }
-  
-  .imageGroup i {
-    font-size: 40px;
-    color: white;
-  }
-  
-  .descriptionVector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .descriptionVector h3 {
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    font-family: "PT Sans", sans-serif;
-  }
-  
-  .descriptionGroup {
-    display: flex;
-    align-items: center;
-    gap: 350px;
-  }
-  
-  .descriptionMate {
-    margin-left: -20px;
-  }
-  
-  .descriptionYerba {
-    transform: translateX(40px);
-  }
-  
-  .descriptionBombilla {
-    transform: translateX(60px);
-  }
-  
-  /* PRODUCTOS DESTACADOS */
-  
-  .containerProductsMates {
-    margin-top: 100px;
-    width: 70%;
-    height: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .productMate {
-    display: flex;
-    gap: 20px;
-    width: 400px;
-    height: 600px;
-  }
-  
-  .imageMate {
-    width: 350px;
-    height: 550px;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  /* CENTRADO DEL h2 */
-  .headerCenter {
-    text-align: center;
-  }
-  
-  .headerCenter h2 {
-    color: white;
-    font-family: "PT Sans", sans-serif;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .imageMate i {
-    color: rgb(255, 255, 97);
-    padding-left: 10px;
-  }
-  
-  .containerDestacado {
-    background-color: #206047;
-    height: 400px;
-    max-width: 500px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-   
-  }
-  
-  /* ALINEADO A LA IZQUIERDA h3 y p */
-  .textLeft {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10px;
-    text-align: left;
-  }
-  
-  .textLeft h3 {
-    color: #ffffff;
-    font-family: "Inter", sans-serif;
-    font-size: 15px;
-    font-weight: 350;
-  }
-  
-  .textLeft p {
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-weight: bold;
-  }
-  
+  width: auto;
+  height: 250vh;
+  background-color: #1a1a1a77;
+}
 
+.containerProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.containerProducts h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+.imagesVector {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 250px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.imageGroup {
+  display: flex;
+  align-items: center;
+}
+
+.bombillaImage{
+  transform: translateX(25px);
+}
+
+.mateImage{
+  transform: translateX(-10px);
+}
+
+
+
+.descriptionVector {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.descriptionVector h3 {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+}
+
+.descriptionVector p {
+  width: 250px; /* o un % mayor si usás un contenedor */
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.descriptionGroup {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.descriptionMate {
+  margin-left: -20px;
+}
+
+.descriptionYerba {
+  transform: translateX(40px);
+}
+
+.descriptionBombilla {
+  transform: translateX(60px);
+}
+
+
+
+/* Container Banner */
+
+.containerBanner {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  
+}
+
+
+.textBanner h1{
+  font-size: 70px;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.textBanner button{
+
+  background-color: #2e5e3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.textBanner button:hover{
+  background-color: #54765d;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.imageBanner img{
+  width: 500px;
+  height: auto;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+
+
+
+
+/* PRODUCTOS DESTACADOS */
+
+.containerProductsMates {
+  margin-top: 100px;
+  width: 70%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productMate {
+  display: flex;
+  gap: 20px;
+  width: 400px;
+  height: 600px;
+}
+
+.imageMate {
+  width: 350px;
+  height: 550px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* CENTRADO DEL h2 */
+.headerCenter {
+  text-align: center;
+}
+
+.headerCenter h2 {
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+
+
+.containerCategorias {
+  background-color: #dfcfa6;
+  height: 400px;
+  max-width: 500px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.contentGrid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.contentGrid h2{
+  font-size: 25px;
+  color: #54765d;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+}

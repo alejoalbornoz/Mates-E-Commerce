@@ -18,6 +18,18 @@ function Location() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
+
+        
+      </div>
+
+      <div className={style.sociales}>
+          <ul>
+            <li class="bi bi-instagram"><a href=""></a></li>
+            <li class="bi bi-whatsapp"><a href=""></a></li>
+            <li class="bi bi-envelope"><a href=""></a></li>
+          </ul>
+          
+
       </div>
     </div>
   );
