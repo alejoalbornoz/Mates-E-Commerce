@@ -56,8 +56,7 @@ function Products() {
             <h3 className={style.descriptionBombilla}>
               Bombilla{" "}
               <p>
-                La varita mágica que hace que todo funcione. Sin ella, sos solo
-                alguien tomando agua caliente con pasto.
+                La aliada fiel que se banca el calor y no se queja. Filtra, no juzga, y siempre está lista para otro mate.
               </p>
             </h3>
           </div>
@@ -71,7 +70,7 @@ function Products() {
           <button>Ver productos</button>
         </div>
         <div className={style.imageBanner}>
-          <img src="src/assets/images/personamate.png" alt="" />
+          <img src="src/assets/images/personamate500.png" alt="" />
         </div>
       </div>
 
