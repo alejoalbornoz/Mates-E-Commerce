@@ -7,7 +7,7 @@
   width: 60%;
   height: 100vh;
   margin: 0 auto;
-  /* margin-top: 30px; */
+  line-height: 2;
 }
 
 .containerLocation h1 {
@@ -45,4 +45,11 @@
   padding-top: 50px;
   color: white;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sociales ul li:hover{
+  color: #f0f0f0;
+  
+  transform: scale(1.05);
 }
