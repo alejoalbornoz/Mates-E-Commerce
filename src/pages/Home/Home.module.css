@@ -120,7 +120,8 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  left: -150px;
+  left: 0; /* en lugar de -150px */
+  transform: translateX(-150px); /* mismo efecto visual, pero más manejable */
   top: -50px;
 }
 
@@ -179,50 +180,82 @@
 }
 
 @media (max-width: 768px) {
+
   .containerHome {
-    display: flex; /* Asegúrate de que el contenedor sea un flexbox */
+    width: 100%;
+
+  }
+
+  .containerHome {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: 0;
     padding-top: 100px;
+    
+    width: 100%;
+  }
+
+  .leftSide {
+    align-items: center;
+    width: 100%;
   }
 
   .textHome {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Asegúrate de que los elementos dentro de .textHome estén centrados */
+    align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .textHome h1 {
     font-size: 2.5rem;
     width: 100%;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
   }
-
+  
   .textHome p {
     width: 90%;
-    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .btnShopHome {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px;
   }
 
   .btnExplore, .btnShopNow {
+    width: 80%;
+  }
+
+  .imgMajor,
+  .leftArrow,
+  .rightArrow {
+    display: none;
+  }
+
+
+  .textBelowHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-
-    margin: 10px auto; /* Esto debería centrar los botones */
+    margin-left: 0;
+    margin-top: -40px;
   }
-
-  .imgMajor {
-    display: none;
-  }
-
-  .leftArrow, .rightArrow {
-    display: none;
+  .textBelowHome h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
   }
 }

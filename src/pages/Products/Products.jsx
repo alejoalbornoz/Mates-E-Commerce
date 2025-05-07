@@ -173,7 +173,7 @@ function Products() {
 
             <div className={style.contentOferts}>
               <div className={style.imageContainer}>
-                <img src="src/assets/images/bombillaoferta.png" alt="" />
+                <img src="src/assets/images/bombillaoferta2.png" alt="" />
               </div>
               <h3>Bombilla de alpaca</h3>
               <p>$24.000</p>
