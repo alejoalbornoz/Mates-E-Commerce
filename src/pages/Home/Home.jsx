@@ -2,7 +2,6 @@ import style from "./Home.module.css";
 import { data } from "../../assets/data";
 import { useEffect, useRef, useState } from "react";
 
-
 function Home() {
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,23 +19,10 @@ function Home() {
     }
   }, [currentIndex]);
 
-  const scrollToImage = (direction) => {
-    if (direction === "prev") {
-      setCurrentIndex((curr) => {
-        const isFirstSlide = currentIndex === 0;
-        return isFirstSlide ? 0 : curr - 1;
-      });
-    } else {
-      const isLastSlide = currentIndex === data.length - 1;
-      if (!isLastSlide) {
-        setCurrentIndex((curr) => curr + 1);
-      }
-    }
-  };
-
   return (
     <div className={style.home}>
       <div className={style.containerHome}>
+        {/* IZQUIERDA */}
         <div className={style.leftSide}>
           <div className={style.textHome}>
             <h1>El Rincón del Mate</h1>
@@ -52,13 +38,14 @@ function Home() {
               llevá un pedacito de nuestra esencia a tu día a día.
             </p>
           </div>
+
           <div className={style.btnShopHome}>
             <button className={style.btnShopNow}>Comprar ahora</button>
             <button className={style.btnExplore}>Contacto</button>
           </div>
-          <br />
+
           <div className={style.textBelowHome}>
-            <img src="src/assets/images/matevector.png" alt="" />
+            <img src="src/assets/images/matevector.png" alt="Mate vector" />
             <h2>
               Nuevo diseño artesanal, <br /> capturando los hermosos momentos de
               tu día a día
@@ -66,25 +53,31 @@ function Home() {
           </div>
         </div>
 
-        <button
-          className={`bi bi-caret-left-fill ${style.leftArrow}`}
-          onClick={() => scrollToImage("prev")}
-        ></button>
-        <button
-          className={`bi bi-caret-right-fill ${style.rightArrow}`}
-          onClick={() => scrollToImage("next")}
-        ></button>
+        {/* DERECHA */}
+        <div className={style.rightSide}>
+          <div className={style.imgMajor}>
+            <ul ref={listRef}>
+              {data.map((item) => {
+                return (
+                  <li key={item.id} className="image-item">
+                    <img src={item.imgUrl} alt="mate" />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-        <div className={style.imgMajor}>
-          <ul ref={listRef}>
-            {data.map((item) => {
-              return (
-                <li key={item.id} className="image-item">
-                  <img src={item.imgUrl} width={500} height={750} alt="mate" />
-                </li>
-              );
-            })}
-          </ul>
+          <div className={style.dotsContainer}>
+            {data.map((_, index) => (
+              <div
+                key={index}
+                className={`${style.dot} ${
+                  currentIndex === index ? style.active : ""
+                }`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

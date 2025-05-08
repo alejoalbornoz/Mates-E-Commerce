@@ -100,7 +100,7 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .ulBase {
     flex-direction: column;
     position: absolute;
