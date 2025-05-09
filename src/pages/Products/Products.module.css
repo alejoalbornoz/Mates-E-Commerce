@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
@@ -7,7 +8,7 @@ html, body {
 
 .containerSlider {
   width: 100%;
-  height: 270vh;
+  height: 240vh;
   background-color: #1a1a1a77;
 }
 
@@ -230,6 +231,14 @@ html, body {
   gap: 20px;
 }
 
+.contentGrid img{
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
 .contentGrid h2 {
   font-size: 25px;
   color: #4d6b55;
@@ -319,4 +328,128 @@ h1 {
   margin-bottom: 20px;
   line-height: 1.5;
   font-weight: 600;
+}
+
+/* --------------------------------------- */
+/* Reponsive */
+
+@media (max-width: 850px) {
+  .containerSlider {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .imagesVector,
+  .descriptionVector {
+    flex-direction: start;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .descriptionGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bombillaImage,
+  .mateImage,
+  .descriptionYerba,
+  .descriptionBombilla {
+    transform: none;
+    margin: 0 auto;
+  }
+
+
+
+  .containerBanner{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .textBanner h1 {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .textBanner button {
+    font-size: 18px;
+  }
+
+  .imageBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imageBanner img {
+    transform: none;
+    max-width: 80%;
+    margin: 20px auto 0 auto;
+  }
+
+  /* ✅ ESTOS CAMBIOS SON LOS QUE PEDÍS */
+  .containerProductsMates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .productMate {
+    width: 180px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imageMate {
+    max-width: 100%;
+  }
+
+  .containerCategorias {
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .contentGrid{
+    padding-bottom: 10px;
+  }
+
+  .contentGrid h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .contentGrid img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Para los productos en oferta (parte de abajo) */
+  .ofertsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .contentOferts {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .descriptionVector p {
+    text-align: center;
+  }
 }

@@ -90,7 +90,7 @@ function Products() {
                 <img
                   src="./src/assets/images/mateimperial.png"
                   alt=""
-                  style={{ width: "300px", height: "auto" }}
+                  
                 />
               </div>
             </div>
@@ -107,12 +107,7 @@ function Products() {
                 <img
                   src="./src/assets/images/yerbacanarias.png"
                   alt=""
-                  style={{
-                    maxWidth: "100%",
-                    width: "300px",
-                    maxHeight: "100%",
-                    objectFit: "contain",
-                  }}
+                  
                 />
               </div>
             </div>
@@ -129,12 +124,7 @@ function Products() {
                 <img
                   src="./src/assets/images/bombillapicoloro.png"
                   alt=""
-                  style={{
-                    maxWidth: "100%",
-                    width: "300px",
-                    maxHeight: "100%",
-                    objectFit: "contain",
-                  }}
+                
                 />
               </div>
             </div>
