@@ -334,9 +334,13 @@ h1 {
 /* Reponsive */
 
 @media (max-width: 850px) {
+
+
+
+
   .containerSlider {
-    height: auto;
-    padding: 40px 20px;
+    height: 200vh;
+    /* padding: 40px 20px; */
   }
 
   .imagesVector,
@@ -384,10 +388,10 @@ h1 {
   .imageBanner img {
     transform: none;
     max-width: 80%;
+    width: 400px;
     margin: 20px auto 0 auto;
   }
 
-  /* ✅ ESTOS CAMBIOS SON LOS QUE PEDÍS */
   .containerProductsMates {
     display: flex;
     flex-direction: row;
