@@ -1,21 +1,16 @@
 import style from "./Home.module.css";
 import { data } from "../../assets/data";
 import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
 
 
 
 function Home() {
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-    // Llamada al backend
-    axios.get("http://localhost:5000/api/products")
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.error("Error al obtener productos:", err));
-  }, []);
+
+
 
 
   useEffect(() => {
