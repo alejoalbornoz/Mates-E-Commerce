@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // 👈 Importante
 import style from "./Navbar.module.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -23,17 +24,16 @@ function Navbar() {
 
         {/* Enlaces */}
         <ul className={`${style.ulBase} ${menuOpen ? style.menuActive : ""}`}>
-
-          <li><a href="">Inicio</a></li>
-          <li><a href="/productos">Productos</a></li>
-          <li><a href="">Ofertas</a></li>
-          <li><a href="">Contacto</a></li>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/productos">Productos</Link></li>
+          <li><Link to="/ofertas">Ofertas</Link></li>
+          <li><Link to="/contacto">Contacto</Link></li>
         </ul>
 
         {/* Iconos usuario y carrito */}
         <div className={style.btnmenu}>
-          <a href="#" className="bi bi-person"></a>
-          <a href="" className="bi bi-cart3"></a>
+          <Link to="/perfil" className="bi bi-person"></Link>
+          <Link to="/carrito" className="bi bi-cart3"></Link>
         </div>
       </nav>
     </div>
@@ -41,5 +41,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
