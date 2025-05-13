@@ -1,11 +1,12 @@
-import './App.css'
-import Navbar from "/src/components/Navbar.jsx"
-import Home from "/src/pages/Home/Home.jsx"
-import Section from "/src/pages/Section/Section.jsx"
-import Location from "/src/pages/Location/Location.jsx"
-import Footer from './Components/Footer'
+import "./App.css";
+import Navbar from "/src/components/Navbar.jsx";
+import Home from "/src/pages/LandingPage/Home/Home.jsx";
+import Section from "/src/pages/LandingPage/Section/Section.jsx";
+import Location from "/src/pages/LandingPage/Location/Location.jsx";
+import Footer from "./Components/Footer";
+import HomeProducts from "./pages/Products/HomeProducts/HomeProducts.jsx";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -16,7 +17,17 @@ function LandingPage() {
       <Location />
       <Footer />
     </>
-  )
+  );
+}
+
+function Products() {
+  return (
+    <>
+      <Navbar />
+      <HomeProducts />
+
+    </>
+  );
 }
 
 function App() {
@@ -24,10 +35,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/productos" element={<h1>hola mundo</h1>} />
+        <Route path="/productos" element={<Products />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

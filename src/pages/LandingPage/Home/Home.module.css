@@ -1,3 +1,7 @@
+
+
+
+
 .containerHome {
   display: flex;
   flex-direction: row;
@@ -8,6 +12,8 @@
   width: 80%;
   margin-left: 250px;
   gap: 20px;
+  
+
 }
 
 .textHome {

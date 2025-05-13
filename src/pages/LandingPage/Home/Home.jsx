@@ -1,5 +1,5 @@
 import style from "./Home.module.css";
-import { data } from "../../assets/data";
+import { data } from "../../../assets/data";
 import { useEffect, useRef, useState } from "react";
 
 

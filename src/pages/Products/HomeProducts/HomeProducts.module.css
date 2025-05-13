@@ -1,0 +1,26 @@
+.container {
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Máximo 4 por fila */
+  gap: 20px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+/* Cada producto individual */
+.gridContainer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  height: 350px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
