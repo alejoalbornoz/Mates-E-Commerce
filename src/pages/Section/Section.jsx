@@ -1,6 +1,6 @@
-import style from "./Products.module.css";
+import style from "./Section.module.css";
 
-function Products() {
+function Section() {
   return (
     <div className={style.containerSlider}>
       <div className={style.containerProducts}>
@@ -175,4 +175,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Section;

@@ -1,18 +1,18 @@
 import './App.css'
 import Navbar from "/src/components/Navbar.jsx"
 import Home from "/src/pages/Home/Home.jsx"
-import Products from "/src/pages/Products/Products.jsx"
+import Section from "/src/pages/Section/Section.jsx"
 import Location from "/src/pages/Location/Location.jsx"
 import Footer from './Components/Footer'
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function LandingPage() {
   return (
     <>
       <Navbar />
       <Home />
-      <Products />
+      <Section />
       <Location />
       <Footer />
     </>
@@ -21,13 +21,12 @@ function LandingPage() {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/products" element={<h1>hola mundo</h1>} />
+        <Route path="/productos" element={<h1>hola mundo</h1>} />
       </Routes>
-
-    </Router>
+    </BrowserRouter>
   )
 }
 

@@ -25,7 +25,7 @@ function Navbar() {
         <ul className={`${style.ulBase} ${menuOpen ? style.menuActive : ""}`}>
 
           <li><a href="">Inicio</a></li>
-          <li><a href="">Productos</a></li>
+          <li><a href="/productos">Productos</a></li>
           <li><a href="">Ofertas</a></li>
           <li><a href="">Contacto</a></li>
         </ul>
@@ -41,3 +41,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
