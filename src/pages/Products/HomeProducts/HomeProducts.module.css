@@ -10,17 +10,44 @@
   width: 70%;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
+
 }
 
-/* Cada producto individual */
-.gridContainer {
-  background-color: black;
+
+.gridContainer { 
   color: white;
   padding: 20px;
-  height: 350px;
+  height: 400px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid white;
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filterButtons button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filterButton:hover {
+  background-color: #ccc;
+}
+
+/* Botón activo */
+.active {
+  background-color: #333 !important; 
+  color: white;
 }
