@@ -10,11 +10,9 @@
   width: 70%;
   margin: 0 auto;
   padding: 20px;
-
 }
 
-
-.gridContainer { 
+.gridContainer {
   color: white;
   padding: 20px;
   height: 400px;
@@ -25,11 +23,20 @@
   border: 1px solid white;
 }
 
+/* Contenedor para los botones de filtro y el select */
+.filterContainer {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* Botones de filtro */
 .filterButtons {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 20px;
 }
 
 .filterButtons button {
@@ -42,12 +49,28 @@
   transition: background-color 0.2s ease;
 }
 
-.filterButton:hover {
+.filterButtons button:hover {
   background-color: #ccc;
 }
 
 /* Botón activo */
 .active {
-  background-color: #333 !important; 
+  background-color: #333 !important;
   color: white;
+}
+
+/* Select al lado derecho */
+.selectContainer {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px; 
+}
+
+.filterSelect select {
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
 }

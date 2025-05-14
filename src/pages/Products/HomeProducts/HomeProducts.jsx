@@ -20,32 +20,52 @@ export default function HomeProducts() {
 
   return (
     <div className={style.container}>
-      {/* Botones de filtro */}
-      <div className={style.filterButtons}>
-        <button
-          className={`${style.filterButton} ${filter === "all" ? style.active : ""}`}
-          onClick={() => setFilter("all")}
-        >
-          Todos
-        </button>
-        <button
-          className={`${style.filterButton} ${filter === "mate" ? style.active : ""}`}
-          onClick={() => setFilter("mate")}
-        >
-          Mates
-        </button>
-        <button
-          className={`${style.filterButton} ${filter === "bombilla" ? style.active : ""}`}
-          onClick={() => setFilter("bombilla")}
-        >
-          Bombillas
-        </button>
-        <button
-          className={`${style.filterButton} ${filter === "termo" ? style.active : ""}`}
-          onClick={() => setFilter("termo")}
-        >
-          Termos
-        </button>
+      <div className={style.filterContainer}>
+        {/* Botones de filtro */}
+        <div className={style.filterButtons}>
+          <button
+            className={`${style.filterButton} ${
+              filter === "all" ? style.active : ""
+            }`}
+            onClick={() => setFilter("all")}
+          >
+            Todos
+          </button>
+          <button
+            className={`${style.filterButton} ${
+              filter === "mate" ? style.active : ""
+            }`}
+            onClick={() => setFilter("mate")}
+          >
+            Mates
+          </button>
+          <button
+            className={`${style.filterButton} ${
+              filter === "bombilla" ? style.active : ""
+            }`}
+            onClick={() => setFilter("bombilla")}
+          >
+            Bombillas
+          </button>
+          <button
+            className={`${style.filterButton} ${
+              filter === "termo" ? style.active : ""
+            }`}
+            onClick={() => setFilter("termo")}
+          >
+            Termos
+          </button>
+        </div>
+
+        <div className={style.filterSelect}>
+          <div className={style.selectContainer}>
+            <select name="" id="">
+              <option value="all">Todos</option>
+              <option value="mate">Mayor precio</option>
+              <option value="bombilla">Menor precio</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       {/* Cuadrícula de productos */}
