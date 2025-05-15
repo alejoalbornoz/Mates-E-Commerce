@@ -5,6 +5,8 @@ import Section from "/src/pages/LandingPage/Section/Section.jsx";
 import Location from "/src/pages/LandingPage/Location/Location.jsx";
 import Footer from "./Components/Footer";
 import HomeProducts from "./pages/Products/HomeProducts/HomeProducts.jsx";
+import ProductDetail from "./pages/Products/ProductDetail/ProductDetail.jsx";
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -25,7 +27,6 @@ function Products() {
     <>
       <Navbar />
       <HomeProducts />
-
     </>
   );
 }
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/productos" element={<Products />} />
+        <Route path="/productos/:id" element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   );

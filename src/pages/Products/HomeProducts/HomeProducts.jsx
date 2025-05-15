@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import style from "./HomeProducts.module.css";
-import { products  } from "../../../data/products";
-
+import products from "../../../data/products.js";
 
 export default function HomeProducts() {
   const [filter, setFilter] = useState("all");
@@ -68,7 +68,9 @@ export default function HomeProducts() {
             <div>
               <h1>{product.name}</h1>
               <button>Comprar</button>
-              <button>Ver</button>
+              <Link to={`/productos/${product.id}`}>
+                <button>Ver</button>
+              </Link>
             </div>
           </div>
         ))}
