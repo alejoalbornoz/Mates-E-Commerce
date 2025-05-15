@@ -1,14 +1,7 @@
 import { useState } from "react";
 import style from "./HomeProducts.module.css";
+import { products  } from "../../../data/products";
 
-const products = [
-  { id: 1, name: "Mate Imperial", category: "mate" },
-  { id: 2, name: "Mate Camionero", category: "mate" },
-  { id: 3, name: "Bombilla de acero", category: "bombilla" },
-  { id: 4, name: "Termo Stanley", category: "termo" },
-  { id: 5, name: "Bombilla curva", category: "bombilla" },
-  { id: 6, name: "Termo Lumilagro", category: "termo" },
-];
 
 export default function HomeProducts() {
   const [filter, setFilter] = useState("all");
@@ -72,7 +65,11 @@ export default function HomeProducts() {
       <div className={style.grid}>
         {filteredProducts.map((product) => (
           <div key={product.id} className={style.gridContainer}>
-            <h1>{product.name}</h1>
+            <div>
+              <h1>{product.name}</h1>
+              <button>Comprar</button>
+              <button>Ver</button>
+            </div>
           </div>
         ))}
       </div>
