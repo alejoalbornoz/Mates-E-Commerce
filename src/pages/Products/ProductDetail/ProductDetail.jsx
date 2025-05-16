@@ -16,10 +16,12 @@ export default function ProductDetail() {
       <Navbar />
       <div className={style.container}>
         <div className={style.containerProduct}>
-          <h1>{product.name}</h1>
 
           <div className={style.detailContainer}>
-            <div className={style.imageContainer}></div>
+            <div className={style.imageContainer}>
+            <h1>{product.name}</h1>
+              <img src="" alt="" />
+            </div>
             <div className={style.infoContainer}>
               <p>Categoría: {product.category}</p>
 
