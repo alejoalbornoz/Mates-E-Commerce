@@ -5,11 +5,22 @@ import products from "../../../data/products.js";
 
 export default function HomeProducts() {
   const [filter, setFilter] = useState("all");
+  const [sort, setSort] = useState("none"); // nuevo estado para ordenar
+
+  const handleSortChange = (e) => {
+    setSort(e.target.value);
+  };
 
   const filteredProducts =
     filter === "all"
       ? products
       : products.filter((product) => product.category === filter);
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sort === "highPrice") return b.price - a.price;
+    if (sort === "lowPrice") return a.price - b.price;
+    return 0;
+  });
 
   return (
     <div className={style.container}>
@@ -50,12 +61,13 @@ export default function HomeProducts() {
           </button>
         </div>
 
+        {/* Selector de orden */}
         <div className={style.filterSelect}>
           <div className={style.selectContainer}>
-            <select name="" id="">
-              <option value="all">Todos</option>
-              <option value="mate">Mayor precio</option>
-              <option value="bombilla">Menor precio</option>
+            <select value={sort} onChange={handleSortChange}>
+              <option value="none">Ordenar por</option>
+              <option value="highPrice">Mayor precio</option>
+              <option value="lowPrice">Menor precio</option>
             </select>
           </div>
         </div>
@@ -63,10 +75,11 @@ export default function HomeProducts() {
 
       {/* Cuadrícula de productos */}
       <div className={style.grid}>
-        {filteredProducts.map((product) => (
+        {sortedProducts.map((product) => (
           <div key={product.id} className={style.gridContainer}>
             <div>
               <h1>{product.name}</h1>
+              <h2>${product.price}</h2>
               <button>Comprar</button>
               <Link to={`/productos/${product.id}`}>
                 <button>Ver</button>
