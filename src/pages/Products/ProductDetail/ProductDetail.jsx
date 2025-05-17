@@ -20,7 +20,9 @@ export default function ProductDetail() {
           <div className={style.detailContainer}>
             <div className={style.imageContainer}>
             <h1>{product.name}</h1>
+            <div className={style.image}>
               <img src="" alt="" />
+            </div>
             </div>
             <div className={style.infoContainer}>
               <p>Categoría: {product.category}</p>

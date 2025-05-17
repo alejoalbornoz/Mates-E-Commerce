@@ -60,6 +60,13 @@
   transform: scale(1.05);
 }
 
+
+.image{
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
 /* ======================= */
 /* 💡 Media Queries */
 /* ======================= */
