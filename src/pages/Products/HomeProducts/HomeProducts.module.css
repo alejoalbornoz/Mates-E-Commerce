@@ -15,8 +15,9 @@
 .gridContainer {
   color: white;
   padding: 20px;
+  min-width: 380px;
   height: 100%;
-  min-height: 400px;
+  min-height: 500px;
   border-radius: 10px;
   display: flex;
   flex-direction: column; /* Organiza contenido verticalmente */
@@ -37,6 +38,9 @@
   font-family: "Lexend", sans-serif;
   
 }
+
+
+
 
 
 .gridContainer button {
@@ -98,6 +102,7 @@
   background-color: #333 !important;
   color: white;
 }
+
 
 
 /* Select */

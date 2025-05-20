@@ -60,12 +60,15 @@ export default function HomeProducts() {
           <div key={product.id} className={style.gridContainer}>
             <div>
               <h1>{product.name}</h1>
+              
               <h2>${product.price}</h2>
               <button>Comprar</button>
               <Link to={`/productos/${product.id}`}>
                 <button>Ver</button>
               </Link>
             </div>
+            
+                <button className={style.btnAddCar}>Agregar al carrito</button>
           </div>
         ))}
       </div>
