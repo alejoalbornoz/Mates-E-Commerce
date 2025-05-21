@@ -57,18 +57,18 @@ export default function HomeProducts() {
 
       <div className={style.grid}>
         {displayedProducts.map((product) => (
-          <div key={product.id} className={style.gridContainer}>
-            <div>
+          <div key={product.id} className={style.productWrapper}>
+            <div className={style.gridContainer}>
               <h1>{product.name}</h1>
-              
               <h2>${product.price}</h2>
-              <button>Comprar</button>
+            </div>
+
+            <div className={style.buttonOutside}>
               <Link to={`/productos/${product.id}`}>
                 <button>Ver</button>
               </Link>
+              <button>Agregar al carrito</button>
             </div>
-            
-                <button className={style.btnAddCar}>Agregar al carrito</button>
           </div>
         ))}
       </div>
