@@ -26,7 +26,6 @@ function Navbar() {
         <ul className={`${style.ulBase} ${menuOpen ? style.menuActive : ""}`}>
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/productos">Productos</Link></li>
-          <li><Link to="/ofertas">Ofertas</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>
         </ul>
 
