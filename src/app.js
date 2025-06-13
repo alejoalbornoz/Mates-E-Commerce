@@ -18,3 +18,6 @@ app.use(express.json());
 app.use("/api", authRoutes);
 
 export default app;
+
+
+//TEST
