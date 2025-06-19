@@ -11,6 +11,7 @@ import Cart from "./pages/Products/Cart/Cart.jsx";
 import { ShopContextProvider } from "/src/Context/shop-context.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
+import { AuthProvider } from "./Context/AuthContext.jsx";
 
 function LandingPage() {
   return (
@@ -25,19 +26,20 @@ function LandingPage() {
 
 function App() {
   return (
-    <ShopContextProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/productos" element={<Shop />} />
-          <Route path="/productos/:id" element={<ShopDetail />} />
-          <Route path="/carrito" element={<Cart />} />
-          <Route path="/register" element={<RegisterPage />} />
-          
-        </Routes>
-      </BrowserRouter>
-    </ShopContextProvider>
+    <AuthProvider>
+      <ShopContextProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/productos" element={<Shop />} />
+            <Route path="/productos/:id" element={<ShopDetail />} />
+            <Route path="/carrito" element={<Cart />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </BrowserRouter>
+      </ShopContextProvider>
+    </AuthProvider>
   );
 }
 
