@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #698660;
 }
 
 .login-box {
@@ -12,8 +11,15 @@
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 24rem;
+  width: 25rem;
 }
+
+.login-box input:focus{
+    outline: none;
+  box-shadow: 0 0 0 2px #58bc82;
+}
+
+
 
 .login-form {
   display: flex;
@@ -22,9 +28,9 @@
 }
 
 .login-title {
-  color: white;
+  color: #58bc82;
   font-size: 1.5rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -32,7 +38,7 @@
 
 .login-input {
   width: 100%;
-  background-color: #3f3f46; /* similar a bg-zinc-700 */
+  background-color: #3f3f46; 
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -41,13 +47,17 @@
   font-size: 1rem;
 }
 
+
+
+
+
 .login-button {
-  background-color: #3b82f6; /* azul */
+  background-color: #58bc82; 
   color: white;
   padding: 0.7rem;
   margin-top: 10px;
   font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 6px;
@@ -57,7 +67,7 @@
 }
 
 .login-button:hover {
-  background-color: #2563eb;
+  background-color: #58bc828e;
 }
 
 .error-text {
@@ -69,16 +79,16 @@
 
 .login-footer {
   margin-top: 20px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: white;
   display: flex;
   justify-content: space-between;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   gap: 0.5rem;
 }
 
 .register-link {
-  color: #60a5fa; /* similar a text-blue-400 */
+  color: #58bc82b7; /* similar a text-blue-400 */
   text-decoration: none;
 }
 

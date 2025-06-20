@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #5c6d5b; /* fondo de pantalla */
+  
   padding: 1rem;
 }
 
@@ -20,9 +20,9 @@
 
 /* Título */
 .register-title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-style: normal;
-  color: #ffffff;
+  color: #58bc82;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -53,15 +53,15 @@
 /* Focus */
 .register-box input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #3b82f6;
+  box-shadow: 0 0 0 2px #58bc82;
 }
 
 .btn-submit {
-  background-color: #3b82f6; /* azul */
+  background-color: #58bc82; /* azul */
   color: white;
   padding: 0.7rem;
   font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 6px;
@@ -71,18 +71,15 @@
 }
 
 .btn-submit:hover {
-  background-color: #2563eb;
+  background-color: #58bc828e;
 }
 
-.btn-submit:active {
-  background-color: #1d4ed8;
-}
 
 .warning-errors {
   color: red;
   font-size: 14px;
   margin-bottom: 4px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -97,7 +94,7 @@
 
 .textLogin {
   margin-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", sans-serif;
   color: white;
   text-align: center;
   
@@ -105,7 +102,7 @@
 
 .textLogin a{
   text-decoration: none;
-  color: #60a5fa;
+  color: #58bc82b7;
   margin: 10px;
 }
 

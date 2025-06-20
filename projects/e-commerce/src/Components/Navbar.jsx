@@ -37,7 +37,7 @@ function Navbar() {
 
         {/* Iconos usuario y carrito */}
         <div className="btnmenu">
-          <Link to="/perfil" className="bi bi-person"></Link>
+          <Link to="/login" className="bi bi-person"></Link>
           <Link to="/carrito" className="bi bi-cart3"></Link>
         </div>
       </nav>
