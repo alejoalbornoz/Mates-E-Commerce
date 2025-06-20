@@ -22,14 +22,19 @@ function RegisterPage() {
     signup(values);
   });
 
+
   return (
     <div className="register-container">
       <div className="register-box">
-        {registerErrors.map((error, i) => (
-          <span key={i} className="warning-errors">
-            {error}
-          </span>
-        ))}
+        {Array.isArray(registerErrors) && registerErrors.length > 0 && (
+          <div className="form-errors">
+            {registerErrors.map((error, i) => (
+              <p key={i} className="warning-errors">
+                {error}
+              </p>
+            ))}
+          </div>
+        )}
 
         <h1 className="register-title">Crear cuenta 🧉</h1>
         <form onSubmit={onSubmit}>
@@ -41,18 +46,25 @@ function RegisterPage() {
           {errors.username && (
             <span className="warning-errors">Username is required</span>
           )}
+
           <input
             type="email"
             {...register("email", { required: true })}
             placeholder="Email"
           />
-          {errors.email && <span className="warning-errors">Email is required</span>}
+          {errors.email && (
+            <span className="warning-errors">Email is required</span>
+          )}
+
           <input
             type="password"
             {...register("password", { required: true })}
             placeholder="Password"
           />
-          {errors.password && <span className="warning-errors">Password is required</span>}
+          {errors.password && (
+            <span className="warning-errors">Password is required</span>
+          )}
+
           <button type="submit" className="btn-submit">
             Enviar
           </button>

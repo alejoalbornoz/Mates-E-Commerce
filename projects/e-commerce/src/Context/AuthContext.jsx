@@ -2,7 +2,6 @@ import { createContext, useState, useContext, useEffect } from "react";
 import { registerRequest, loginRequest, verifyTokenRequest } from "../api/auth";
 import Cookies from "js-cookie";
 
-
 export const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -25,8 +24,16 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
       }
     } catch (error) {
-      console.log(error.response.data);
-      setErrors(error.response.data.message);
+
+      console.log("Error del backend: ", error.response)
+
+      if (Array.isArray(error.response?.data)) {
+        setErrors(error.response.data);
+      } else if (typeof error.response?.data?.message === "string") {
+        setErrors([error.response.data.message]);
+      } else {
+        setErrors(["Error desconocido"]);
+      }
     }
   };
 
