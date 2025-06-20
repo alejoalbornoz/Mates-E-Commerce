@@ -22,7 +22,6 @@ function RegisterPage() {
     signup(values);
   });
 
-
   return (
     <div className="register-container">
       <div className="register-box">
@@ -41,7 +40,7 @@ function RegisterPage() {
           <input
             type="text"
             {...register("username", { required: true })}
-            placeholder="Username"
+            placeholder="Usuario"
           />
           {errors.username && (
             <span className="warning-errors">Username is required</span>
@@ -59,16 +58,23 @@ function RegisterPage() {
           <input
             type="password"
             {...register("password", { required: true })}
-            placeholder="Password"
+            placeholder="Contraseña"
           />
           {errors.password && (
             <span className="warning-errors">Password is required</span>
           )}
 
           <button type="submit" className="btn-submit">
-            Enviar
+            Crear cuenta
           </button>
         </form>
+
+        <p className="textLogin">
+          ¿Ya tenés una cuenta?
+          <Link to="/login" className="">
+            Iniciá sesión
+          </Link>
+        </p>
       </div>
     </div>
   );

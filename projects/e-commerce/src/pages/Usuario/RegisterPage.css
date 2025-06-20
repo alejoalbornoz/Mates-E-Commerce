@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1e1e1e; /* fondo de pantalla */
+  background-color: #5c6d5b; /* fondo de pantalla */
   padding: 1rem;
 }
 
@@ -60,7 +60,6 @@
   background-color: #3b82f6; /* azul */
   color: white;
   padding: 0.7rem;
-  margin-top: 10px;
   font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
@@ -95,3 +94,22 @@
   border-radius: 6px;
   text-align: center;
 }
+
+.textLogin {
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  
+}
+
+.textLogin a{
+  text-decoration: none;
+  color: #60a5fa;
+  margin: 10px;
+}
+
+.textLogin a:hover{
+  text-decoration: underline;
+}
+

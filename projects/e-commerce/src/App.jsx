@@ -10,8 +10,9 @@ import Cart from "./pages/Products/Cart/Cart.jsx";
 
 import { ShopContextProvider } from "/src/Context/shop-context.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
+import RegisterPage from "./pages/Usuario/RegisterPage.jsx";
 import { AuthProvider } from "./Context/AuthContext.jsx";
+import LoginPage from "./pages/Usuario/LoginPage.jsx";
 
 function LandingPage() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/productos/:id" element={<ShopDetail />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </BrowserRouter>
       </ShopContextProvider>
