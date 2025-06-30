@@ -8,14 +8,16 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    const savedCart = Cookies.get("cart");
+    const userId = Cookies.get("userCartId") || "guest";
+    const savedCart = Cookies.get(`cart_${userId}`);
     if (savedCart) {
       setCartItems(JSON.parse(savedCart));
     }
   }, []);
 
   const saveToCookie = (items) => {
-    Cookies.set("cart", JSON.stringify(items), { expires: 7 });
+    const userId = Cookies.get("userCartId") || "guest";
+    Cookies.set(`cart_${userId}`, JSON.stringify(items), { expires: 7 });
   };
 
   const addToCart = (id) => {
@@ -75,8 +77,9 @@ export function CartProvider({ children }) {
   };
 
   const clearCart = () => {
+    const userId = Cookies.get("userCartId") || "guest";
     setCartItems([]);
-    Cookies.remove("cart");
+    Cookies.remove(`cart_${userId}`);
   };
 
   return (

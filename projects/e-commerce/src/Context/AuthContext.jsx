@@ -22,10 +22,11 @@ export const AuthProvider = ({ children }) => {
       if (res.status === 200) {
         setUser(res.data);
         setIsAuthenticated(true);
+
+        Cookies.set("userCartId", res.data.id, { expires: 7 });
       }
     } catch (error) {
-
-      console.log("Error del backend: ", error.response)
+      console.log("Error del backend: ", error.response);
 
       if (Array.isArray(error.response?.data)) {
         setErrors(error.response.data);
@@ -43,6 +44,8 @@ export const AuthProvider = ({ children }) => {
       const res = await loginRequest(user);
       setUser(res.data);
       setIsAuthenticated(true);
+
+      Cookies.set("userCartId", res.data.id, { expires: 7 });
     } catch (error) {
       console.log(error);
       setErrors([error.response.data.message]);
@@ -53,6 +56,11 @@ export const AuthProvider = ({ children }) => {
     Cookies.remove("token");
     setIsAuthenticated(false);
     setUser(null);
+    const userId = Cookies.get("userCartId");
+    if (userId) {
+      Cookies.remove(`cart_${userId}`);
+      Cookies.remove("userCartId");
+    }
   };
 
   useEffect(() => {
