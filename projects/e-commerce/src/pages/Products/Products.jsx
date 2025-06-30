@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./Shop.module.css";
-import { PRODUCTS } from "../../../data/products.js";
-import { Product } from "./Product.jsx";
+import { PRODUCTS } from "../../data/products.js";
+import { Product } from "./ProductGrid.jsx";
 
 export default function Shop() {
   const [filter, setFilter] = useState("all");

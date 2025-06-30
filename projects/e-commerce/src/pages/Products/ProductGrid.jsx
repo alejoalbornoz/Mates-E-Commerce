@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { ShopContext } from "../../../context/shop-context";
+import { CartContext } from "../../Context/CartContext";
 import style from "./shop.module.css";
-
 
 export const Product = (props) => {
   const { id, name, price, productImage } = props.data;
-  const { addToCart, cartItems } = useContext(ShopContext);
+  const { addToCart, cartItems } = useContext(CartContext);
 
   const cartItemAmount = cartItems[id];
 
