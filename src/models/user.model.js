@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-// User schema definition
-
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -18,6 +16,11 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+  },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user", // todos los usuarios nuevos serán "user"
   },
 }, {
   timestamps: true,

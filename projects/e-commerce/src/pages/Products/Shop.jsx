@@ -1,20 +1,27 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import style from "./Shop.module.css";
-import { PRODUCTS } from "../../data/products.js";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Product } from "./ProductGrid.jsx";
+import "./Shop.css";
 
 export default function Shop() {
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("none");
+  const [products, setProducts] = useState([]);
 
-  const categories = ["all", "mate", "bombilla", "termo"];
+  const categories = ["all", "Mates", "Bombillas", "Termos"];
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/products")
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.log("Error al traer productos", err));
+  }, []);
 
   const getFilteredAndSortedProducts = () => {
     let result =
       filter === "all"
-        ? PRODUCTS
-        : PRODUCTS.filter((p) => p.category === filter);
+        ? products
+        : products.filter((p) => p.category === filter);
 
     if (sort === "highPrice")
       result = [...result].sort((a, b) => b.price - a.price);
@@ -27,20 +34,14 @@ export default function Shop() {
   const displayedProducts = getFilteredAndSortedProducts();
 
   return (
-    <div className={style.shop}>
-      <div className={style.shopTitle}>
-        <h1>Productos</h1>
-      </div>
-
-      {/* Filtros y orden */}
-      <div className={style.filterContainer}>
-        <div className={style.filterButtons}>
+    <div className="shop">
+      {/* Filtros */}
+      <div className="filterContainer">
+        <div className="filterButtons">
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`${style.filterButton} ${
-                filter === cat ? style.active : ""
-              }`}
+              className={`filterButton ${filter === cat ? "active" : ""}`}
               onClick={() => setFilter(cat)}
             >
               {cat === "all"
@@ -50,7 +51,7 @@ export default function Shop() {
           ))}
         </div>
 
-        <div className={style.filterSelect}>
+        <div className="filterSelect">
           <select value={sort} onChange={(e) => setSort(e.target.value)}>
             <option value="none">Ordenar por</option>
             <option value="highPrice">Mayor precio</option>
@@ -60,9 +61,9 @@ export default function Shop() {
       </div>
 
       {/* Productos */}
-      <div className={style.productsContainer}>
+      <div className="productsContainer">
         {displayedProducts.map((product) => (
-          <Product key={product.id} data={product} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </div>

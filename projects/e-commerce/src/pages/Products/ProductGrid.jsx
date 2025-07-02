@@ -1,23 +1,24 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import style from "./shop.module.css";
+import "./Shop.css";  // Importar CSS normal
 
-export const Product = (props) => {
-  const { id, name, price, productImage } = props.data;
+export const Product = ({ product }) => {
   const { addToCart, cartItems } = useContext(CartContext);
-
-  const cartItemAmount = cartItems[id];
+  const cartItemAmount = cartItems[product.id] || 0;
 
   return (
-    <div className={style.product}>
-      <img src={productImage} alt="" />
-      <div className={style.description}>
+    <div className="product">
+      <img src={product.image} alt={product.title} />
+      <div className="descriptionn">
         <p>
-          <b>{name}</b>
+          <b>{product.name}</b>
         </p>
-        <p>${price}</p>
+        <p>${product.price}</p>
       </div>
-      <button className={style.addToCartBttn} onClick={() => addToCart(id)}>
+      <button
+        className="addToCartBttn"
+        onClick={() => addToCart(product)}
+      >
         Agregar al carrito {cartItemAmount > 0 && <>({cartItemAmount})</>}
       </button>
     </div>

@@ -4,7 +4,7 @@ import Home from "/src/pages/LandingPage/Home.jsx";
 import Section from "/src/pages/LandingPage/Section.jsx";
 import Location from "/src/pages/LandingPage/Location.jsx";
 import Footer from "./Components/Footer";
-import Products from "./pages/Products/Products.jsx";
+import Shop from "./pages/Products/Shop.jsx";
 import Cart from "./pages/Products/Cart.jsx";
 
 import { CartProvider } from "/src/Context/CartContext";
@@ -32,7 +32,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/productos" element={<Products />} />
+            <Route path="/productos" element={<Shop />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
