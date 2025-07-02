@@ -34,7 +34,6 @@ export const AuthProvider = ({ children }) => {
         setErrors([error.response.data.message]);
       } else {
         setErrors(["Error desconocido"]);
-        // "hola fawfa"
       }
     }
   };

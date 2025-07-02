@@ -37,8 +37,20 @@ router.post("/", authRequired, async (req, res) => {
 
 // Obtener productos
 router.get("/", async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
+  try {
+    const products = await Product.find();
+
+    // Convertir cada producto a objeto plano y agregar campo `id`
+    const formattedProducts = products.map((p) => ({
+      ...p.toObject(),
+      id: p._id, // 👈 Esto es lo importante
+    }));
+
+    res.json(formattedProducts);
+  } catch (error) {
+    console.error("Error al obtener productos:", error);
+    res.status(500).json({ message: "Error al obtener productos" });
+  }
 });
 
 export default router;
