@@ -2,16 +2,9 @@ import style from "./Home.module.css";
 import { data } from "/src/data/data.js";
 import { useEffect, useRef, useState } from "react";
 
-
-
-
 function Home() {
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
-
-
-
-
 
   useEffect(() => {
     const listNode = listRef.current;
