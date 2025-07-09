@@ -12,6 +12,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./pages/User/RegisterPage.jsx";
 import { AuthProvider } from "./Context/AuthContext.jsx";
 import LoginPage from "./pages/User/LoginPage.jsx";
+import MenuAdmin from "./Components/MenuAdmin.jsx";
+import HomeDashboard from "./pages/AdminDashboard/HomeDashboard.jsx";
 
 function LandingPage() {
   return (
@@ -23,6 +25,22 @@ function LandingPage() {
     </>
   );
 }
+
+function AdminDashboard() {
+  return (
+    <div className="container">
+      <div className="menuContainer">
+        <MenuAdmin />
+      </div>
+      <div className="contentContainer">
+        <div className="main">
+          <HomeDashboard />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 function App() {
   return (
@@ -36,6 +54,7 @@ function App() {
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/dashboard" element={<AdminDashboard />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

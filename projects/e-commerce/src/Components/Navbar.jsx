@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useAuth } from "../Context/AuthContext";
@@ -7,6 +7,7 @@ import { useAuth } from "../Context/AuthContext";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout } = useAuth();
+  console.log("Usuario logeado", user);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -41,10 +42,25 @@ function Navbar() {
 
         {/* Iconos usuario y carrito */}
         <div className="btnmenu">
-          {!user && <Link to="/login" className="bi bi-person"></Link>}
-          <Link to="/carrito" className="bi bi-cart3"></Link>
+          {!user && (
+            <Link to="/login" className="bi bi-person" title="Login"></Link>
+          )}
+          <Link to="/carrito" className="bi bi-cart3" title="Carrito"></Link>
+          {user?.role === "admin" && (
+            <Link
+              to="/dashboard"
+              className="bi bi-building"
+              title="Dashboard"
+            ></Link>
+          )}
+
           {user ? (
-            <Link to="/" className="bi bi-box-arrow-right" onClick={() => logout()}></Link>
+            <Link
+              to="/"
+              className="bi bi-box-arrow-right"
+              title="Logout"
+              onClick={() => logout()}
+            ></Link>
           ) : null}
         </div>
       </nav>

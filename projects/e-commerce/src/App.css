@@ -17,3 +17,26 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.main {
+  margin-top: 100px;
+  font-family: "Inter", sans-serif;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  background-color: rgb(80, 77, 77);
+}
+
+.menuContainer {
+  width: 250px;
+  padding: 5px 10px;
+  border-right: 2px solid #ddd;
+}
+
+.contentContainer {
+  padding: 5px 20px;
+  width: 100%;
+}
