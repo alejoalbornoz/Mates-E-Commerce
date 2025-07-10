@@ -14,6 +14,7 @@ import { AuthProvider } from "./Context/AuthContext.jsx";
 import LoginPage from "./pages/User/LoginPage.jsx";
 import MenuAdmin from "./Components/MenuAdmin.jsx";
 import HomeDashboard from "./pages/AdminDashboard/HomeDashboard.jsx";
+import ProtectedRoute from "./ProtectedRoute.jsx";
 
 function LandingPage() {
   return (
@@ -41,7 +42,6 @@ function AdminDashboard() {
   );
 }
 
-
 function App() {
   return (
     <AuthProvider>
@@ -54,7 +54,10 @@ function App() {
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/dashboard" element={<AdminDashboard />} />
+
+            <Route element={<ProtectedRoute requireAdmin={true} />}>
+              <Route path="/dashboard" element={<AdminDashboard />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </CartProvider>

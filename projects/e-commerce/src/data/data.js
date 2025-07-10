@@ -16,11 +16,11 @@ export const data = [
 export const menu = [
   {
     id: 1,
-    title: "Panel de Administrador",
+    title: "Administrador",
     listItems: [
       {
         id: 1,
-        title: "Incio",
+        title: "Inicio",
         url: "/dashboard",
         icon: "bi bi-house",
       },
