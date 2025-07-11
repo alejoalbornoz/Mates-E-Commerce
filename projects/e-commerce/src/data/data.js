@@ -185,3 +185,75 @@ export const chartBoxConversion = {
     { name: "Sat", Ratio: 450 },
   ],
 };
+
+export const barChartBoxRevenue = {
+  title: "Ganancia Obtenida",
+  color: "#8884d8",
+  dataKey: "Ganancia",
+  chartData: [
+    {
+      name: "Sun",
+      Ganancia: 4000,
+    },
+    {
+      name: "Mon",
+      Ganancia: 3000,
+    },
+    {
+      name: "Tue",
+      Ganancia: 2000,
+    },
+    {
+      name: "Wed",
+      Ganancia: 2780,
+    },
+    {
+      name: "Thu",
+      Ganancia: 1890,
+    },
+    {
+      name: "Fri",
+      Ganancia: 2390,
+    },
+    {
+      name: "Sat",
+      Ganancia: 3490,
+    },
+  ],
+};
+
+export const barChartBoxVisit = {
+  title: "Total de Visitas",
+  color: "#FF8042",
+  dataKey: "Visitas",
+  chartData: [
+    {
+      name: "Sun",
+      Visitas: 4000,
+    },
+    {
+      name: "Mon",
+      Visitas: 3000,
+    },
+    {
+      name: "Tue",
+      Visitas: 2000,
+    },
+    {
+      name: "Wed",
+      Visitas: 2780,
+    },
+    {
+      name: "Thu",
+      Visitas: 1890,
+    },
+    {
+      name: "Fri",
+      Visitas: 2390,
+    },
+    {
+      name: "Sat",
+      Visitas: 3490,
+    },
+  ],
+};

@@ -1,11 +1,14 @@
 import ChartBox from "../../Components/ChartBox.jsx";
 import TopBox from "../../Components/TopBox.jsx";
+import BarChartBox from "../../Components/BarChartBox.jsx";
 
 import {
   chartBoxUser,
   chartBoxConversion,
   chartBoxRevenue,
   chartBoxProduct,
+  barChartBoxRevenue,
+  barChartBoxVisit
 } from "../../data/data";
 
 import "./homeDashboard.css";
@@ -35,10 +38,10 @@ const HomeDashboard = () => {
         
       </div>
       <div className="box box8">
-       
+        <BarChartBox {...barChartBoxVisit} />
       </div>
       <div className="box box9">
-        
+        <BarChartBox {...barChartBoxRevenue} />
       </div>
     </div>
   );
