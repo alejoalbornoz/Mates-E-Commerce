@@ -1,4 +1,5 @@
 import ChartBox from "../../Components/ChartBox.jsx";
+import TopBox from "../../Components/TopBox.jsx";
 
 import {
   chartBoxUser,
@@ -13,7 +14,7 @@ const HomeDashboard = () => {
   return (
     <div className="home">
       <div className="box box1">
-       
+       <TopBox/>
       </div>
       <div className="box box2">
         <ChartBox {...chartBoxUser} />
