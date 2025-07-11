@@ -3,6 +3,8 @@
   color: white;
   padding: 20px;
   text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
 }
 
 .container ul li {
@@ -12,11 +14,9 @@
   font-size: 15px;
   text-decoration: none;
   padding-top: 10px;
-  
 }
 
 .container a {
   color: #ffffff;
   text-decoration: none;
-  
 }

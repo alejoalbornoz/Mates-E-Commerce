@@ -9,7 +9,7 @@ function ProtectedRoute({ requireAdmin = false }) {
   if (!isAuthenticated) return <Navigate to="/login" replace />;
 
   if (requireAdmin && user?.role !== "admin") {
-    return <Navigate to="/" replace />; // o a "/acceso-denegado"
+    return <Navigate to="/" replace />; 
   }
 
   return <Outlet />;
