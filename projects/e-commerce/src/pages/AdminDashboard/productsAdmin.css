@@ -1,0 +1,141 @@
+.productsDashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+.productsDashboard h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+/* NUEVO: contenedor principal para layout en fila */
+.productsDashboard .content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Formulario */
+.productsDashboard form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Lista de productos */
+.productsDashboard ul {
+  flex: 2;
+  min-width: 300px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cada producto */
+.productsDashboard li {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.productsDashboard li strong {
+  font-size: 18px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.productsDashboard form input,
+.productsDashboard form textarea {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.productsDashboard form button {
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #2a7ae4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.productsDashboard form button:hover {
+  background-color: #1d5ebc;
+}
+
+/* Botones editar y eliminar */
+.productsDashboard li button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.productsDashboard li button:first-of-type {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.productsDashboard li button:first-of-type:hover {
+  background-color: #e0a800;
+}
+
+.productsDashboard li button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.productsDashboard li button:last-of-type:hover {
+  background-color: #b52a37;
+}
+
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 8px;
+}
+
+.productInfo strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.productInfo span {
+  font-size: 16px;
+  color: #666;
+}
+
+.productActions {
+  display: flex;
+  gap: 8px;
+}

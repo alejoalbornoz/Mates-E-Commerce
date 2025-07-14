@@ -2,6 +2,7 @@ import express from "express";
 import Product from "../models/product.model.js";
 import { authRequired } from "../middlewares/validateToken.js";
 import User from "../models/user.model.js";
+import { isAdmin } from "../middlewares/validateAdmin.js";
 
 const router = express.Router();
 
@@ -51,6 +52,18 @@ router.get("/", async (req, res) => {
     console.error("Error al obtener productos:", error);
     res.status(500).json({ message: "Error al obtener productos" });
   }
+});
+
+router.put("/:id", authRequired, isAdmin, async (req, res) => {
+  const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json(product);
+});
+
+router.delete("/:id", authRequired, isAdmin, async (req, res) => {
+  await Product.findByIdAndDelete(req.params.id);
+  res.sendStatus(204);
 });
 
 export default router;

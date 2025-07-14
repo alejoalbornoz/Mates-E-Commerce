@@ -15,6 +15,7 @@ import LoginPage from "./pages/User/LoginPage.jsx";
 import MenuAdmin from "./Components/MenuAdmin.jsx";
 import HomeDashboard from "./pages/AdminDashboard/HomeDashboard.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
+import ProductsAdmin from "./pages/AdminDashboard/ProductsAdmin.jsx";
 
 function LandingPage() {
   return (
@@ -42,6 +43,24 @@ function AdminDashboard() {
   );
 }
 
+
+function ProductsDashboard() {
+  return (
+    <div className="container">
+      <div className="menuContainer">
+        <MenuAdmin />
+      </div>
+      <div className="contentContainer">
+        <div className="main">
+          <ProductsAdmin />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
 function App() {
   return (
     <AuthProvider>
@@ -57,6 +76,7 @@ function App() {
 
             <Route element={<ProtectedRoute requireAdmin={true} />}>
               <Route path="/dashboard" element={<AdminDashboard />} />
+              <Route path="/dashboard/products" element={<ProductsDashboard />} />
             </Route>
           </Routes>
         </BrowserRouter>
