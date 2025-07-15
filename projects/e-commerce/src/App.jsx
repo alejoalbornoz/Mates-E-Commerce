@@ -16,6 +16,7 @@ import MenuAdmin from "./Components/MenuAdmin.jsx";
 import HomeDashboard from "./pages/AdminDashboard/HomeDashboard.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import ProductsAdmin from "./pages/AdminDashboard/ProductsAdmin.jsx";
+import UsersAdmin from "./pages/AdminDashboard/UsersAdmin.jsx";
 
 function LandingPage() {
   return (
@@ -43,7 +44,6 @@ function AdminDashboard() {
   );
 }
 
-
 function ProductsDashboard() {
   return (
     <div className="container">
@@ -59,7 +59,20 @@ function ProductsDashboard() {
   );
 }
 
-
+function UsersDashboard() {
+  return (
+    <div className="container">
+      <div className="menuContainer">
+        <MenuAdmin />
+      </div>
+      <div className="contentContainer">
+        <div className="main">
+          <UsersAdmin />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -76,7 +89,14 @@ function App() {
 
             <Route element={<ProtectedRoute requireAdmin={true} />}>
               <Route path="/dashboard" element={<AdminDashboard />} />
-              <Route path="/dashboard/products" element={<ProductsDashboard />} />
+              <Route
+                path="/dashboard/products"
+                element={<ProductsDashboard />}
+              />
+              <Route
+                path="/dashboard/users"
+                element={<UsersDashboard />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>
