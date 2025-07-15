@@ -10,6 +10,7 @@ const ProductsAdmin = () => {
     description: "",
     price: "",
     image: "",
+    category: "",
   });
 
   const getProducts = async () => {
@@ -45,7 +46,13 @@ const ProductsAdmin = () => {
         });
       }
 
-      setForm({ name: "", description: "", price: "", image: "" });
+      setForm({
+        name: "",
+        description: "",
+        price: "",
+        image: "",
+        category: "",
+      });
       setEditing(null);
       getProducts();
     } catch (error) {
@@ -60,6 +67,7 @@ const ProductsAdmin = () => {
       description: product.description,
       price: product.price,
       image: product.image,
+      category: product.category,
     });
   };
 
@@ -94,6 +102,16 @@ const ProductsAdmin = () => {
             onChange={(e) => setForm({ ...form, price: e.target.value })}
             required
           />
+          <select
+            value={form.category}
+            onChange={(e) => setForm({ ...form, category: e.target.value })}
+            required
+          >
+            <option value="">Seleccionar categoría</option>
+            <option value="Mates">Mates</option>
+            <option value="Bombillas">Bombillas</option>
+            <option value="Termos">Termos</option>
+          </select>
           <input
             type="text"
             placeholder="Imagen URL"
