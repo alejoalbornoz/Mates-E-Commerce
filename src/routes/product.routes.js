@@ -57,12 +57,33 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.put("/:id", authRequired, isAdmin, async (req, res) => {
-  const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
-  res.json(product);
+router.put("/:id", authRequired, isAdmin, upload.single("image"), async (req, res) => {
+  try {
+    const { name, description, price, stock, category } = req.body;
+
+    const updatedFields = {
+      name,
+      description,
+      price,
+      stock,
+      category,
+    };
+
+    if (req.file) {
+      updatedFields.image = `/uploads/${req.file.filename}`;
+    }
+
+    const product = await Product.findByIdAndUpdate(req.params.id, updatedFields, {
+      new: true,
+    });
+
+    res.json(product);
+  } catch (error) {
+    console.error("Error al actualizar producto:", error);
+    res.status(500).json({ message: "Error al actualizar producto", error });
+  }
 });
+
 
 router.delete("/:id", authRequired, isAdmin, async (req, res) => {
   await Product.findByIdAndDelete(req.params.id);
