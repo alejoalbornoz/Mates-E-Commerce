@@ -31,18 +31,30 @@ const ProductsAdmin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("description", form.description);
+      formData.append("price", form.price);
+      formData.append("category", form.category);
+      if (form.image) {
+        formData.append("image", form.image); // solo si hay imagen
+      }
+
       if (editing) {
         await axios.put(
           `http://localhost:4000/api/products/${editing._id}`,
-          form,
+          formData,
           {
             withCredentials: true,
+            headers: { "Content-Type": "multipart/form-data" },
           }
         );
       } else {
-        await axios.post("http://localhost:4000/api/products", form, {
+        await axios.post("http://localhost:4000/api/products", formData, {
           withCredentials: true,
+          headers: { "Content-Type": "multipart/form-data" },
         });
       }
 
@@ -113,10 +125,9 @@ const ProductsAdmin = () => {
             <option value="Termos">Termos</option>
           </select>
           <input
-            type="text"
-            placeholder="Imagen URL"
-            value={form.image}
-            onChange={(e) => setForm({ ...form, image: e.target.value })}
+            type="file"
+            accept="image/*"
+            onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
           />
           <textarea
             placeholder="Descripción"

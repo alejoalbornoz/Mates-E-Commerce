@@ -7,7 +7,7 @@ export default function CartItem({ data }) {
 
   return (
     <div className="cartItem">
-      <img src={image} alt={name} />
+      <img src={`http://localhost:4000${image}`} alt={name} />
       <div className="description">
         <p><strong>{name}</strong></p>
         <p>${price}</p>

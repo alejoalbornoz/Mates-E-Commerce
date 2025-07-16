@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use("/api", authRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/products", productRoutes);
+app.use("/uploads", express.static("public/uploads"))
 
 
 export default app;

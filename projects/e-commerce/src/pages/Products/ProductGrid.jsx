@@ -8,7 +8,7 @@ export const Product = ({ product }) => {
 
   return (
     <div className="product">
-      <img src={product.image} alt={product.title} />
+      <img src={`http://localhost:4000${product.image}`} alt={product.title} />
       <div className="descriptionn">
         <p><b>{product.name}</b></p>
         <p>${product.price}</p>

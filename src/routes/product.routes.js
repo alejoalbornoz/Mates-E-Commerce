@@ -3,13 +3,14 @@ import Product from "../models/product.model.js";
 import { authRequired } from "../middlewares/validateToken.js";
 import User from "../models/user.model.js";
 import { isAdmin } from "../middlewares/validateAdmin.js";
+import upload from "../middlewares/upload.js"
 
 const router = express.Router();
 
 // Crear producto (modo admin)
-router.post("/", authRequired, async (req, res) => {
+router.post("/", authRequired, upload.single("image"), async (req, res) => {
   try {
-    // Verificamos si el usuario es admin
+    // Verificar si es admin
     const user = await User.findById(req.user.id);
     if (!user || user.role !== "admin") {
       return res.status(403).json({
@@ -17,7 +18,9 @@ router.post("/", authRequired, async (req, res) => {
       });
     }
 
-    const { name, description, price, image, stock, category } = req.body;
+    const { name, description, price, stock, category } = req.body;
+
+    const image = req.file ? `/uploads/${req.file.filename}` : "";
 
     const product = new Product({
       name,
