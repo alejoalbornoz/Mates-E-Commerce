@@ -1,0 +1,84 @@
+/* Checkout.css */
+
+.checkout-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.checkout-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.checkout-card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #111;
+  resize: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #e5e7eb;
+}

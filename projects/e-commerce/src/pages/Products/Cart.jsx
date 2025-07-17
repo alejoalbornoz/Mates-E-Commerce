@@ -17,7 +17,9 @@ export default function Cart() {
 
       <div className="cartItems">
         {cartItems.length > 0 ? (
-          cartItems.map((product) => <CartItem key={product.id} data={product} />)
+          cartItems.map((product) => (
+            <CartItem key={product.id} data={product} />
+          ))
         ) : (
           <h2> Tu carrito se encuentra vacío </h2>
         )}
@@ -29,7 +31,7 @@ export default function Cart() {
           <button onClick={() => navigate("/productos")}>
             Continuar comprando
           </button>
-          <button>Comprar</button>
+          <button onClick={() => navigate("/checkout")}>Comprar</button>
         </div>
       )}
     </div>
