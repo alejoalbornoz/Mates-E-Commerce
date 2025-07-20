@@ -1,14 +1,14 @@
-import style from "./Section.module.css";
+import "./Section.css";
 
 function Section() {
   return (
-    <div className={style.containerSlider}>
-      <div className={style.containerProducts}>
+    <div className="containerSlider">
+      <div className="containerProducts">
         <h2>Productos</h2>
 
-        <div className={style.imagesVector}>
-          <div className={style.imageGroup}>
-            <div className={style.mateImage}>
+        <div className="imagesVector">
+          <div className="imageGroup">
+            <div className="mateImage">
               <img
                 src="src/assets/images/matevector.png"
                 alt=""
@@ -17,7 +17,7 @@ function Section() {
             </div>
           </div>
 
-          <div className={style.imageGroup}>
+          <div className="imageGroup">
             <img
               src="src/assets/images/paqueteyerba.png"
               alt=""
@@ -25,8 +25,8 @@ function Section() {
             />
           </div>
 
-          <div className={style.imageGroup}>
-            <div className={style.bombillaImage}>
+          <div className="imageGroup">
+            <div className="bombillaImage">
               <img
                 src="src/assets/images/bombilla.png"
                 alt=""
@@ -36,9 +36,9 @@ function Section() {
           </div>
         </div>
 
-        <div className={style.descriptionVector}>
-          <div className={style.descriptionGroup}>
-            <h3 className={style.descriptionMate}>
+        <div className="descriptionVector">
+          <div className="descriptionGroup">
+            <h3 className="descriptionMate">
               Mate{" "}
               <p>
                 El rey de las juntadas. Sin él, no hay ronda ni charla que
@@ -46,14 +46,14 @@ function Section() {
               </p>
             </h3>
 
-            <h3 className={style.descriptionYerba}>
+            <h3 className="descriptionYerba">
               Yerba{" "}
               <p>
                 La magia verde que te despierta, te acompaña y a veces te reta
                 con un “¡está lavado!”.
               </p>
             </h3>
-            <h3 className={style.descriptionBombilla}>
+            <h3 className="descriptionBombilla">
               Bombilla{" "}
               <p>
                 La aliada fiel que se banca el calor y no se queja. Filtra, no
@@ -64,67 +64,64 @@ function Section() {
         </div>
       </div>
 
-      <div className={style.containerBanner}>
-        <div className={style.textBanner}>
+      <div className="containerBanner">
+        <div className="textBanner">
           <h1>
             El sabor <br /> del ritual <br />
             argentino <br /> en tu casa
           </h1>
           <button>Ver productos</button>
         </div>
-        <div className={style.imageBanner}>
+        <div className="imageBanner">
           <img src="src/assets/images/personamate500.png" alt="" />
         </div>
       </div>
 
       {/* PRODUCTOS CATEGORIAS PRODUCTOS */}
 
-      <div className={style.containerProductsMates}>
-        <div className={style.productMate}>
-          <div className={style.imageMate}>
-            <div className={style.headerCenter}></div>
+      <div className="containerProductsMates">
+        <div className="productMate">
+          <div className="imageMate">
+            <div className="headerCenter"></div>
 
-            <div className={style.containerCategorias}>
-              <div className={style.contentGrid}>
+            <div className="containerCategorias">
+              <div className="contentGrid">
                 <h2>Mates</h2>
                 <img
                   src="./src/assets/images/mateimperial.png"
                   alt=""
-                  
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className={style.productMate}>
-          <div className={style.imageMate}>
-            <div className={style.headerCenter}></div>
+        <div className="productMate">
+          <div className="imageMate">
+            <div className="headerCenter"></div>
 
-            <div className={style.containerCategorias}>
-              <div className={style.contentGrid}>
+            <div className="containerCategorias">
+              <div className="contentGrid">
                 <h2>Yerbas</h2>
                 <img
                   src="./src/assets/images/yerbacanarias.png"
                   alt=""
-                  
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className={style.productMate}>
-          <div className={style.imageMate}>
-            <div className={style.headerCenter}></div>
+        <div className="productMate">
+          <div className="imageMate">
+            <div className="headerCenter"></div>
 
-            <div className={style.containerCategorias}>
-              <div className={style.contentGrid}>
+            <div className="containerCategorias">
+              <div className="contentGrid">
                 <h2>Bombillas</h2>
                 <img
                   src="./src/assets/images/bombillapicoloro.png"
                   alt=""
-                
                 />
               </div>
             </div>
@@ -132,37 +129,37 @@ function Section() {
         </div>
       </div>
 
-      {/* PRODUCTOS CATEGORIAS PRODUCTOS */}
+      {/* PRODUCTOS DESTACADOS */}
       <h1>Lo más elegido por nuestros clientes</h1>
-      <div className={style.containerOferts}>
-        <div className={style.oferts}>
-          <div className={style.ofertsGrid}>
-            <div className={style.contentOferts}>
-              <div className={style.imageContainer}>
+      <div className="containerOferts">
+        <div className="oferts">
+          <div className="ofertsGrid">
+            <div className="contentOferts">
+              <div className="imageContainer">
                 <img src="src/assets/images/mateoferta.png" alt="" />
               </div>
               <h3>2x1 Mate personalizado</h3>
               <p>$40.000</p>
             </div>
 
-            <div className={style.contentOferts}>
-              <div className={style.imageContainer}>
+            <div className="contentOferts">
+              <div className="imageContainer">
                 <img src="src/assets/images/matealgarrobo.png" alt="" />
               </div>
               <h3>Mate de algarrobo</h3>
               <p>$28.000</p>
             </div>
 
-            <div className={style.contentOferts}>
-              <div className={style.imageContainer}>
+            <div className="contentOferts">
+              <div className="imageContainer">
                 <img src="src/assets/images/ofertayerba.png" alt="" />
               </div>
               <h3>3x2 Yerba Canarias 1kg</h3>
               <p>$20.000</p>
             </div>
 
-            <div className={style.contentOferts}>
-              <div className={style.imageContainer}>
+            <div className="contentOferts">
+              <div className="imageContainer">
                 <img src="src/assets/images/bombillaoferta2.png" alt="" />
               </div>
               <h3>Bombilla de alpaca</h3>
