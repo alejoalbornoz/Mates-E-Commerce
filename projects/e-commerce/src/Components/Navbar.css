@@ -86,9 +86,9 @@
   cursor: pointer;
 }
 
-.btnmenu a:hover {
+/* .btnmenu a:hover {
   color: #ffb700;
-}
+} */
 
 /* ===== Botón Hamburguesa ===== */
 .menuToggle {

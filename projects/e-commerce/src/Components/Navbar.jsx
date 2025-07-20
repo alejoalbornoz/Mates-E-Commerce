@@ -49,7 +49,7 @@ function Navbar() {
           {user?.role === "admin" && (
             <Link
               to="/dashboard"
-              className="bi bi-building"
+              className="bi bi-laptop"
               title="Dashboard"
             ></Link>
           )}
@@ -57,7 +57,7 @@ function Navbar() {
           {user ? (
             <Link
               to="/"
-              className="bi bi-box-arrow-right"
+              className="bi bi-door-closed"
               title="Logout"
               onClick={() => logout()}
             ></Link>
