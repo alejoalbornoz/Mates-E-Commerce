@@ -5,8 +5,10 @@ import Section from "/src/pages/LandingPage/Section.jsx";
 import Location from "/src/pages/LandingPage/Location.jsx";
 import Footer from "./Components/Footer";
 import Shop from "./pages/Products/Shop.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 import Cart from "./pages/Products/Cart.jsx";
 import Checkout from "./pages/Products/Checkout.jsx"
+
 
 import { CartProvider } from "/src/Context/CartContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -100,6 +102,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/productos" element={<Shop />} />
+            <Route path="/contacto" element={<Contact />} />
+            
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />

@@ -50,12 +50,6 @@ export const menu = [
       },
       {
         id: 6,
-        title: "Calendario",
-        url: "/dashboard/calendar",
-        icon: "bi bi-calendar-week",
-      },
-      {
-        id: 7,
         title: "Configuracion",
         url: "/dashboard/settings",
         icon: "bi bi-gear",
