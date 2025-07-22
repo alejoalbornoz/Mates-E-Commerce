@@ -73,6 +73,9 @@
 }
 
 .countHandler button {
+  display: flex;
+  justify-content: center; /* centrar horizontal */
+  align-items: center;     /* centrar vertical */
   width: 32px;
   height: 32px;
   background-color: #222;

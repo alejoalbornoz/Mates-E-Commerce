@@ -11,7 +11,15 @@ export function CartProvider({ children }) {
     const userId = Cookies.get("userCartId") || "guest";
     const savedCart = Cookies.get(`cart_${userId}`);
     if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
+      const parsedCart = JSON.parse(savedCart);
+
+      // Asegurarse de que todos los items tengan quantity
+      const validatedCart = parsedCart.map((item) => ({
+        ...item,
+        quantity: item.quantity ?? 1, // si no tiene quantity, poner 1
+      }));
+
+      setCartItems(validatedCart);
     }
   }, []);
 

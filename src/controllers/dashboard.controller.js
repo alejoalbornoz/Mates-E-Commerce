@@ -60,3 +60,41 @@ export const getSummary = async (req, res) => {
     res.status(500).json({ error: "Error al obtener los datos del dashboard" });
   }
 };
+
+
+
+export const getRevenueByProduct = async (req, res) => {
+  try {
+    const orders = await Order.find();
+
+    // Agrupar ingresos por producto y por día
+    const revenueMap = {};
+
+    orders.forEach((order) => {
+      const day = new Date(order.createdAt).toLocaleDateString("es-AR", {
+        weekday: "long",
+      });
+
+      order.items.forEach((item) => {
+        if (!revenueMap[day]) {
+          revenueMap[day] = { name: capitalize(day), Mates: 0, Termos: 0, Bombillas: 0 };
+        }
+
+        if (item.name.toLowerCase().includes("mate")) revenueMap[day].Mates += item.price * item.quantity;
+        else if (item.name.toLowerCase().includes("termo")) revenueMap[day].Termos += item.price * item.quantity;
+        else if (item.name.toLowerCase().includes("bombilla")) revenueMap[day].Bombillas += item.price * item.quantity;
+      });
+    });
+
+    const result = Object.values(revenueMap);
+
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error al calcular ingresos por producto" });
+  }
+};
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
