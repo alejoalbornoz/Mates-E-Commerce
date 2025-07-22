@@ -1,4 +1,5 @@
 import Order from "../models/order.model.js";
+import Product from "../models/product.model.js";
 import User from "../models/user.model.js";
 
 export const getTopUsers = async (req, res) => {
@@ -35,5 +36,27 @@ export const getTopUsers = async (req, res) => {
   } catch (error) {
     console.error("Error al obtener los usuarios con más compras:", error);
     res.status(500).json({ error: "Error interno del servidor" });
+  }
+};
+
+
+export const getSummary = async (req, res) => {
+  try {
+    const userCount = await User.countDocuments();
+    const productCount = await Product.countDocuments();
+    const orderCount = await Order.countDocuments();
+
+    const orders = await Order.find();
+    const totalIncome = orders.reduce((sum, order) => sum + order.total, 0);
+
+    res.json({
+      users: userCount,
+      products: productCount,
+      orders: orderCount,
+      income: totalIncome.toFixed(2),
+    });
+  } catch (error) {
+    console.error("Error al obtener resumen:", error);
+    res.status(500).json({ error: "Error al obtener los datos del dashboard" });
   }
 };

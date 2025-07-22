@@ -1,6 +1,14 @@
 .chartBox {
   display: flex;
+  justify-content: space-between;
+  align-items: stretch;
   height: 100%;
+  gap: 20px;
+  padding: 16px;
+  background-color: #1e1e1e; /* fondo oscuro moderno */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  color: white;
 }
 
 .chartBox .boxInfo {
@@ -14,16 +22,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
   color: white;
 }
 
-.boxInfo h1{
-    font-style: normal;
-    transform: translateX(-40px);
+.boxInfo h1 {
+  font-size: 28px;
+  margin: 0;
 }
 
-.boxInfo a{
-    text-decoration: none;
+.boxInfo a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.boxInfo a:hover {
+  text-decoration: underline;
 }
 
 .chartBox .chartInfo {
@@ -31,25 +48,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.chartBox .chartInfo .chart {
-  width: 100%;
-  height: 100%;
-}
-
-.chartBox .chartInfo .texts {
-  display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
 }
 
-.chartBox .chartInfo .texts .percentage {
+.chartBox .chart {
+  width: 100%;
+  height: 60px;
+}
+
+.chartBox .texts {
+  margin-top: 8px;
+}
+
+.texts .percentage {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .duration {
-  font-size: 14px;
-  color: white;
+  font-size: 13px;
+  color: #ccc;
 }
