@@ -9,8 +9,6 @@ import {
   chartBoxConversion,
   chartBoxRevenue,
   chartBoxProduct,
-  barChartBoxRevenue,
-  barChartBoxVisit,
 } from "../../data/data";
 
 import "./homeDashboard.css";
@@ -38,12 +36,6 @@ const HomeDashboard = () => {
       </div>
       <div className="box box7">
         <BigChartBox />
-      </div>
-      <div className="box box8">
-        <BarChartBox {...barChartBoxVisit} />
-      </div>
-      <div className="box box9">
-        <BarChartBox {...barChartBoxRevenue} />
       </div>
     </div>
   );

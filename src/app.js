@@ -3,12 +3,11 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-
 import cartRoutes from "./routes/cart.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import productRoutes from "./routes/product.routes.js";
-import checkoutRoutes from "./routes/checkout.routes.js"
-
+import checkoutRoutes from "./routes/checkout.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 const app = express();
 
@@ -26,7 +25,9 @@ app.use(cookieParser());
 app.use("/api", authRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/orders", checkoutRoutes)
-app.use("/uploads", express.static("public/uploads"))
+app.use("/api/orders", checkoutRoutes);
+
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/uploads", express.static("public/uploads"));
 
 export default app;

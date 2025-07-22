@@ -1,22 +1,38 @@
-import "./topBox.css"
-
-import { topDealUsers } from "../data/data";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./topBox.css";
 
 const TopBox = () => {
+  const [topUsers, setTopUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchTopUsers = async () => {
+      try {
+        const res = await axios.get("http://localhost:4000/api/dashboard/top-users", {
+          withCredentials: true,
+        });
+        setTopUsers(res.data);
+      } catch (error) {
+        console.error("Error al obtener usuarios con más compras:", error);
+      }
+    };
+
+    fetchTopUsers();
+  }, []);
+
   return (
     <div className="topBox">
       <h1>Usuarios con Mayores Compras</h1>
       <div className="list">
-        {topDealUsers.map((user) => (
-          <div className="listItem" key={user.id}>
+        {topUsers.map((user, i) => (
+          <div className="listItem" key={i}>
             <div className="user">
-              <img src={user.img} alt="" />
               <div className="userTexts">
                 <span className="username">{user.username}</span>
                 <span className="email">{user.email}</span>
               </div>
             </div>
-            <span className="amount">${user.amount}</span>
+            <span className="amount">${user.total}</span>
           </div>
         ))}
       </div>

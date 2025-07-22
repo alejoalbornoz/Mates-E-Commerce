@@ -20,8 +20,6 @@ router.post("/logout", logout);
 router.get("/verify", verifyToken);
 router.get("/profile", authRequired, profile);
 router.get("/users", authRequired, isAdmin, getAllUsers);
-router.get("/dashboard", authRequired, isAdmin, (req, res) => {
-  res.json({ message: "Bienvenido al dashboard de administrador" });
-});
+
 
 export default router;
