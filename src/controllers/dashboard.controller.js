@@ -39,7 +39,6 @@ export const getTopUsers = async (req, res) => {
   }
 };
 
-
 export const getSummary = async (req, res) => {
   try {
     const userCount = await User.countDocuments();
@@ -61,13 +60,14 @@ export const getSummary = async (req, res) => {
   }
 };
 
-
-
 export const getRevenueByProduct = async (req, res) => {
   try {
     const orders = await Order.find();
 
-    // Agrupar ingresos por producto y por día
+    // Función para capitalizar el nombre del día
+    const capitalize = (str) =>
+      str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
     const revenueMap = {};
 
     orders.forEach((order) => {
@@ -75,19 +75,29 @@ export const getRevenueByProduct = async (req, res) => {
         weekday: "long",
       });
 
-      order.items.forEach((item) => {
-        if (!revenueMap[day]) {
-          revenueMap[day] = { name: capitalize(day), Mates: 0, Termos: 0, Bombillas: 0 };
-        }
+      if (!revenueMap[day]) {
+        revenueMap[day] = {
+          name: capitalize(day),
+          Mates: 0,
+          Termos: 0,
+          Bombillas: 0,
+        };
+      }
 
-        if (item.name.toLowerCase().includes("mate")) revenueMap[day].Mates += item.price * item.quantity;
-        else if (item.name.toLowerCase().includes("termo")) revenueMap[day].Termos += item.price * item.quantity;
-        else if (item.name.toLowerCase().includes("bombilla")) revenueMap[day].Bombillas += item.price * item.quantity;
+      order.items.forEach((item) => {
+        const name = item.name.toLowerCase();
+
+        if (name.includes("mate")) {
+          revenueMap[day].Mates += item.price * item.quantity;
+        } else if (name.includes("termo")) {
+          revenueMap[day].Termos += item.price * item.quantity;
+        } else if (name.includes("bombilla") || name.includes("bombillas")) {
+          revenueMap[day].Bombillas += item.price * item.quantity;
+        }
       });
     });
 
     const result = Object.values(revenueMap);
-
     res.json(result);
   } catch (err) {
     console.error(err);

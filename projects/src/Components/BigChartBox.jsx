@@ -19,6 +19,7 @@ const BigChartBox = () => {
         const res = await axios.get("http://localhost:4000/api/dashboard/revenue-by-product", {
           withCredentials: true,
         });
+        console.log("Datos recibidos:", res.data);
         setData(res.data);
       } catch (error) {
         console.error("Error al traer ingresos por producto:", error);
