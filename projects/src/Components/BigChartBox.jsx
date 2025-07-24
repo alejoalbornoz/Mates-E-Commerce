@@ -16,13 +16,16 @@ const BigChartBox = () => {
   useEffect(() => {
     const fetchRevenueData = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/dashboard/revenue-by-product", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "http://localhost:4000/api/dashboard/revenue-by-product",
+          {
+            withCredentials: true,
+          }
+        );
         console.log("Datos recibidos:", res.data);
         setData(res.data);
       } catch (error) {
-        console.error("Error al traer ingresos por producto:", error);
+        console.error("Error al traer ingresos diarios:", error);
       }
     };
 
@@ -41,12 +44,15 @@ const BigChartBox = () => {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area type="monotone" dataKey="Bombillas" stackId="1" stroke="#8884d8" fill="#8884d8" />
-            <Area type="monotone" dataKey="Termos" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-            <Area type="monotone" dataKey="Mates" stackId="1" stroke="#ffc658" fill="#ffc658" />
+            <Area
+              type="monotone"
+              dataKey="total"
+              stroke="#9cd884ff"
+              fill="#9cd884ff"
+            />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
+      </div> 
     </div>
   );
 };

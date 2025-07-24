@@ -122,3 +122,34 @@ export const verifyToken = async (req, res) => {
     });
   });
 };
+
+export const updateProfile = async (req, res) => {
+  const userId = req.user.id;
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user)
+      return res.status(404).json({ message: "Usuario no encontrado" });
+
+    if (email) user.email = email;
+
+    if (password) {
+      const passwordHash = await bcrypt.hash(password, 10);
+      user.password = passwordHash;
+    }
+    const updatedUser = await user.save();
+
+    return res.json({
+      id: updatedUser._id,
+      username: updatedUser.username,
+      email: updatedUser.email,
+      updatedAt: updatedUser.updatedAt,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Error al actualizar",
+      error: error.message,
+    });
+  }
+};

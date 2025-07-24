@@ -1,7 +1,6 @@
 import Order from "../models/order.model.js";
 
 export const createOrder = async (req, res) => {
-  console.log("Usuario en createOrder:", req.user);
   try {
     const {
       name,
@@ -19,10 +18,11 @@ export const createOrder = async (req, res) => {
 
     // Mapeo para ajustarlo al esquema Order
     const mappedItems = items.map((item) => ({
-      productId: item.id,       // o item._id si lo usás así en frontend
+      productId: item.id,
       name: item.name || item.title || "Producto sin nombre",
       quantity: item.quantity,
       price: item.price,
+      category: item.category || "Sin categoría", // <-- esta línea es clave
     }));
 
     const newOrder = new Order({
@@ -49,12 +49,10 @@ export const createOrder = async (req, res) => {
 export const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find()
-      .populate("user", "username email")             // trae name y email del usuario
-      .populate("items.productId", "name price image"); // trae datos del producto
+      .populate("user", "username email")
+      .populate("items.productId", "name price image");
     res.status(200).json(orders);
   } catch (error) {
     res.status(500).json({ error: "Error al obtener las órdenes" });
   }
 };
-
-

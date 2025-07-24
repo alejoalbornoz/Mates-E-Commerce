@@ -27,7 +27,7 @@ body {
 
 .container {
   display: flex;
-  height: 105vh;
+  min-height: 105vh;
   width: auto;
   background-color: #2a3447;
 }

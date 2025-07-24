@@ -61,12 +61,8 @@ export const getSummary = async (req, res) => {
 };
 
 export const getRevenueByProduct = async (req, res) => {
-  try {
+   try {
     const orders = await Order.find();
-
-    // Función para capitalizar el nombre del día
-    const capitalize = (str) =>
-      str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
     const revenueMap = {};
 
@@ -75,36 +71,27 @@ export const getRevenueByProduct = async (req, res) => {
         weekday: "long",
       });
 
+      const revenueOfThisOrder = order.items.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+      }, 0);
+
       if (!revenueMap[day]) {
-        revenueMap[day] = {
-          name: capitalize(day),
-          Mates: 0,
-          Termos: 0,
-          Bombillas: 0,
-        };
+        revenueMap[day] = { name: capitalize(day), total: 0 };
       }
 
-      order.items.forEach((item) => {
-        const name = item.name.toLowerCase();
-
-        if (name.includes("mate")) {
-          revenueMap[day].Mates += item.price * item.quantity;
-        } else if (name.includes("termo")) {
-          revenueMap[day].Termos += item.price * item.quantity;
-        } else if (name.includes("bombilla") || name.includes("bombillas")) {
-          revenueMap[day].Bombillas += item.price * item.quantity;
-        }
-      });
+      revenueMap[day].total += revenueOfThisOrder;
     });
 
     const result = Object.values(revenueMap);
+
     res.json(result);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Error al calcular ingresos por producto" });
+    res.status(500).json({ error: "Error al calcular ingresos diarios" });
   }
 };
 
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
+

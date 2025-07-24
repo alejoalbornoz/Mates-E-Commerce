@@ -5,6 +5,7 @@ import {
   logout,
   profile,
   verifyToken,
+  updateProfile,
 } from "../controllers/auth.controller.js";
 import { getAllUsers } from "../controllers/user.controller.js";
 import { authRequired } from "../middlewares/validateToken.js";
@@ -19,6 +20,7 @@ router.post("/login", validateSchema(loginSchema), login);
 router.post("/logout", logout);
 router.get("/verify", verifyToken);
 router.get("/profile", authRequired, profile);
+router.put("/update", authRequired, updateProfile)
 router.get("/users", authRequired, isAdmin, getAllUsers);
 
 

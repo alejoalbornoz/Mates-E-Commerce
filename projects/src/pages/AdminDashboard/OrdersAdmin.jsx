@@ -44,7 +44,10 @@ const OrdersAdmin = () => {
                 <small>{order.user?.email || "Sin email"}</small>
               </td>
               <td>{order.name}</td>
-              <td>{order.address}</td>
+              <td>
+                {order.address} - {order.city}, {order.state} (Código postal:{" "}
+                {order.zip}) | {order.country}
+              </td>
               <td>${order.total}</td>
               <td>{order.paymentMethod}</td>
               <td>{order.status}</td>
@@ -60,8 +63,6 @@ const OrdersAdmin = () => {
             </tr>
           ))}
         </tbody>
-
-        
       </table>
     </div>
   );
