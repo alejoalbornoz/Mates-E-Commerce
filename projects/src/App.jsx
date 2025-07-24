@@ -7,8 +7,7 @@ import Footer from "./Components/Footer";
 import Shop from "./pages/Products/Shop.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Cart from "./pages/Products/Cart.jsx";
-import Checkout from "./pages/Products/Checkout.jsx"
-
+import Checkout from "./pages/Products/Checkout.jsx";
 
 import { CartProvider } from "/src/Context/CartContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -21,6 +20,7 @@ import ProtectedRoute from "./ProtectedRoute.jsx";
 import ProductsAdmin from "./pages/AdminDashboard/ProductsAdmin.jsx";
 import UsersAdmin from "./pages/AdminDashboard/UsersAdmin.jsx";
 import OrdersAdmin from "./pages/AdminDashboard/OrdersAdmin.jsx";
+import UpdateProfile from "./pages/User/UpdateProfile.jsx";
 
 function LandingPage() {
   return (
@@ -103,7 +103,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/productos" element={<Shop />} />
             <Route path="/contacto" element={<Contact />} />
-            
+            <Route path="/settings" element={<UpdateProfile />} />
+
             <Route path="/carrito" element={<Cart />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />

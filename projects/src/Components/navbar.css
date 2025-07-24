@@ -37,7 +37,7 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 70%;
+  left: 60%;
   transform: translateX(-50%);
   font-weight: 600;
   transition: max-height 0.4s ease, padding 0.4s ease;
@@ -74,6 +74,7 @@
 }
 
 .btnmenu {
+ 
   display: flex;
   gap: 20px;
 }

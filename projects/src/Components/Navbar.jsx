@@ -55,12 +55,19 @@ function Navbar() {
           )}
 
           {user ? (
-            <Link
-              to="/"
-              className="bi bi-door-closed"
-              title="Logout"
-              onClick={() => logout()}
-            ></Link>
+            <>
+              <Link
+                to="/settings"
+                className="bi bi-gear"
+                title="Settings"
+              ></Link>
+              <Link
+                to="/"
+                className="bi bi-door-closed"
+                title="Logout"
+                onClick={() => logout()}
+              ></Link>
+            </>
           ) : null}
         </div>
       </nav>
