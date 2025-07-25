@@ -35,7 +35,7 @@ function UpdateProfile() {
 
     try {
       await axios.put(
-        "/api/auth/update",
+        "http://localhost:4000/api/update",
         { email: email1 },
         { withCredentials: true }
       );
@@ -55,7 +55,7 @@ function UpdateProfile() {
 
     try {
       await axios.put(
-        "/api/auth/update",
+        "http://localhost:4000/api/update",
         { password: pass1 },
         { withCredentials: true }
       );
