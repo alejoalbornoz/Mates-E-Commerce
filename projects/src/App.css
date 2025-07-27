@@ -1,12 +1,9 @@
 body {
   background: linear-gradient(135deg, #3b5c4c, #8aaf83);
-
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-
   margin: 0;
-
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;

@@ -109,11 +109,9 @@ function Checkout() {
             <select name="country" onChange={handleChange} required>
               <option value="">Seleccionar país</option>
               <option value="AR">Argentina</option>
-              <option value="BR">Brasil</option>
               <option value="UY">Uruguay</option>
               <option value="CL">Chile</option>
               <option value="PY">Paraguay</option>
-              <option value="BO">Bolivia</option>
             </select>
           </div>
         </div>
