@@ -123,6 +123,7 @@ const ProductsAdmin = () => {
             <option value="Mates">Mates</option>
             <option value="Bombillas">Bombillas</option>
             <option value="Termos">Termos</option>
+            <option value="Yerbas">Yerbas</option>
           </select>
           <input
             type="file"

@@ -8,7 +8,7 @@ export default function Shop() {
   const [sort, setSort] = useState("none");
   const [products, setProducts] = useState([]);
 
-  const categories = ["all", "Mates", "Bombillas", "Termos"];
+  const categories = ["all", "Mates", "Bombillas", "Termos", "Yerbas"];
 
   useEffect(() => {
     axios
