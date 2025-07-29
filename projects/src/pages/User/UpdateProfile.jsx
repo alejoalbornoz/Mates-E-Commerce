@@ -71,7 +71,6 @@ function UpdateProfile() {
   return (
     <div className="profile-container">
       <h2>Perfil de {user.username}</h2>
-      
 
       {/* Email */}
       <div className="section">
@@ -86,7 +85,7 @@ function UpdateProfile() {
         </div>
 
         {showEmailForm && (
-          <form onSubmit={handleEmailChange}>
+          <form onSubmit={handleEmailChange} className="update-form">
             <input
               type="email"
               placeholder="Nuevo email"
@@ -104,6 +103,31 @@ function UpdateProfile() {
             <div className="actions">
               <button type="submit">Guardar email</button>
               <button type="button" onClick={() => setShowEmailForm(false)}>
+                Cancelar
+              </button>
+            </div>
+          </form>
+        )}
+
+        {showPassForm && (
+          <form onSubmit={handlePasswordChange} className="update-form">
+            <input
+              type="password"
+              placeholder="Nueva contraseña"
+              value={pass1}
+              onChange={(e) => setPass1(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Confirmar contraseña"
+              value={pass2}
+              onChange={(e) => setPass2(e.target.value)}
+              required
+            />
+            <div className="actions">
+              <button type="submit">Guardar contraseña</button>
+              <button type="button" onClick={() => setShowPassForm(false)}>
                 Cancelar
               </button>
             </div>

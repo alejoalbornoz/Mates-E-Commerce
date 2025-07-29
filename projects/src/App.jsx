@@ -21,6 +21,7 @@ import ProductsAdmin from "./pages/AdminDashboard/ProductsAdmin.jsx";
 import UsersAdmin from "./pages/AdminDashboard/UsersAdmin.jsx";
 import OrdersAdmin from "./pages/AdminDashboard/OrdersAdmin.jsx";
 import UpdateProfile from "./pages/User/UpdateProfile.jsx";
+import ThanksForBuy from "./pages/Products/ThanksForBuy.jsx";
 
 function LandingPage() {
   return (
@@ -109,6 +110,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/gracias" element={<ThanksForBuy />} />
 
             <Route element={<ProtectedRoute requireAdmin={true} />}>
               <Route path="/dashboard" element={<AdminDashboard />} />

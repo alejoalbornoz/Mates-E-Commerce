@@ -61,7 +61,8 @@ label {
   background-color: #e5e7eb;
 }
 
-form input {
+/* Cambié esta parte para limitar el alcance */
+.update-form input {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 20px;
@@ -69,9 +70,10 @@ form input {
   border-radius: 10px;
   font-size: 16px;
   background-color: #f9fafb;
+  color: #111827; /* texto oscuro para que se vea */
 }
 
-form input:focus {
+.update-form input:focus {
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);

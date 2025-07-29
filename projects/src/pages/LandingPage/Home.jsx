@@ -9,7 +9,6 @@ function Home() {
   useEffect(() => {
     const listNode = listRef.current;
     const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
-
     if (imgNode) {
       imgNode.scrollIntoView({
         behavior: "smooth",
@@ -18,6 +17,109 @@ function Home() {
       });
     }
   }, [currentIndex]);
+
+  useEffect(() => {
+    const slider = listRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    slider.addEventListener("mousedown", handleMouseDown);
+    slider.addEventListener("mouseleave", handleMouseLeave);
+    slider.addEventListener("mouseup", handleMouseUp);
+    slider.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      slider.removeEventListener("mousedown", handleMouseDown);
+      slider.removeEventListener("mouseleave", handleMouseLeave);
+      slider.removeEventListener("mouseup", handleMouseUp);
+      slider.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    const slider = listRef.current;
+    let isTouching = false;
+    let startX;
+    let scrollLeft;
+
+    const handleTouchStart = (e) => {
+      isTouching = true;
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isTouching) return;
+      const x = e.touches[0].pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleTouchEnd = () => {
+      isTouching = false;
+    };
+
+    slider.addEventListener("touchstart", handleTouchStart);
+    slider.addEventListener("touchmove", handleTouchMove);
+    slider.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      slider.removeEventListener("touchstart", handleTouchStart);
+      slider.removeEventListener("touchmove", handleTouchMove);
+      slider.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
+
+  useEffect(() => {
+    const slider = listRef.current;
+
+    const handleScroll = () => {
+      const children = Array.from(slider.children);
+      const sliderCenter = slider.scrollLeft + slider.offsetWidth / 2;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      children.forEach((child, index) => {
+        const childCenter =
+          child.offsetLeft + child.offsetWidth / 2;
+        const distance = Math.abs(sliderCenter - childCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setCurrentIndex(closestIndex);
+    };
+
+    slider.addEventListener("scroll", handleScroll);
+    return () => slider.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className={style.home}>
@@ -57,13 +159,16 @@ function Home() {
         <div className={style.rightSide}>
           <div className={style.imgMajor}>
             <ul ref={listRef}>
-              {data.map((item) => {
-                return (
-                  <li key={item.id} className="image-item">
-                    <img src={item.imgUrl} alt="mate" />
-                  </li>
-                );
-              })}
+              {data.map((item) => (
+                <li key={item.id} className="image-item">
+                  <img
+                    src={item.imgUrl}
+                    alt="mate"
+                    draggable="false"
+                    onDragStart={(e) => e.preventDefault()}
+                  />
+                </li>
+              ))}
             </ul>
           </div>
 

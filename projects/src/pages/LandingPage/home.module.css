@@ -43,9 +43,9 @@
 }
 
 .textHome p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: "Lexend", sans-serif;
-  width: 60%;
+  width: 70%;
   color: #ffffffb6;
   text-align: left;
 }
@@ -70,6 +70,7 @@
 .textBelowHome h2 {
   font-family: "Lexend", sans-serif;
   color: #ffffffb6;
+  text-align: left;
   font-size: 1.5rem;
   margin-top: 50px;
   margin-left: 30px;
@@ -139,17 +140,30 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  transition: transform 0.5s ease-in-out;
   width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.imgMajor ul::-webkit-scrollbar {
+  display: none;
+}
+
+.imgMajor ul:active {
+  cursor: grabbing;
 }
 
 .imgMajor li {
-  min-width: 100%;
-  height: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 0 5px;
 }
 
 .imgMajor img {
