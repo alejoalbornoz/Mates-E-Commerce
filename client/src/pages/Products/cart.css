@@ -1,19 +1,31 @@
+/* Cart.css - Diseño Mejorado */
+
 /* Contenedor general del carrito */
 .cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 100px;
-  margin-bottom: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px 60px;
   font-family: "Inter", sans-serif;
-  color: #222;
+  color: #2d3748;
 }
 
 .cart h2 {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
+  color: white;
+  position: relative;
+}
+
+.cart h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #ffb700, #ff9900);
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* Lista de ítems */
@@ -23,7 +35,20 @@
   gap: 20px;
   width: 100%;
   max-width: 800px;
+  margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Mensaje de carrito vacío */
+.cartItems h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #718096;
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
 }
 
 /* Cada ítem individual */
@@ -31,23 +56,27 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 20px;
-  transition: box-shadow 0.3s ease;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .cartItem:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #ffb700;
 }
 
 /* Imagen del producto */
 .cartItem img {
   width: 120px;
-  height: auto;
-  border-radius: 10px;
+  height: 120px;
+  border-radius: 12px;
   object-fit: cover;
+  border: 2px solid #f7fafc;
 }
 
 /* Descripción del producto */
@@ -55,49 +84,67 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .description p {
   margin: 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.description .price {
+  color: #ffb700;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* Controles de cantidad */
 .countHandler {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .countHandler button {
   display: flex;
-  justify-content: center; /* centrar horizontal */
-  align-items: center;     /* centrar vertical */
-  width: 32px;
-  height: 32px;
-  background-color: #222;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #1a202c, #2d3748);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .countHandler button:hover {
-  background-color: #555;
+  background: linear-gradient(135deg, #ffb700, #ff9900);
+  transform: scale(1.1);
 }
 
 .countHandler input {
-  width: 45px;
-  height: 32px;
+  width: 50px;
+  height: 36px;
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: 600;
+  background: #f8fafc;
+  transition: border-color 0.2s ease;
+}
+
+.countHandler input:focus {
+  outline: none;
+  border-color: #ffb700;
+  background: white;
 }
 
 /* Checkout */
@@ -106,28 +153,141 @@
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
-  gap: 15px;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .checkout p {
-  font-size: 20px;
-  font-weight: 600;
-  color: #111;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  padding: 10px 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 2px solid #ffb700;
 }
 
 .checkout button {
-  padding: 12px 28px;
-  font-size: 14px;
+  padding: 14px 32px;
+  font-size: 15px;
   font-weight: 600;
-  background-color: #111;
+  background: linear-gradient(135deg, #1a202c, #2d3748);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.checkout button:hover::before {
+  left: 100%;
 }
 
 .checkout button:hover {
-  background-color: #ffb700;
-  color: #111;
+  background: linear-gradient(135deg, #ffb700, #ff9900);
+  color: #1a202c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 183, 0, 0.3);
+}
+
+.checkout button:first-of-type {
+  background: transparent;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+}
+
+.checkout button:first-of-type:hover {
+  background: #f7fafc;
+  color: #1a202c;
+  border-color: #ffb700;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart {
+    padding: 80px 16px 40px;
+  }
+  
+  .cart h2 {
+    font-size: 1.6rem;
+  }
+  
+  .cartItem {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cartItem img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .checkout {
+    margin: 30px 20px;
+    padding: 24px;
+  }
+  
+  .checkout p {
+    font-size: 1.2rem;
+  }
+  
+  .checkout button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartItems {
+    padding: 0 10px;
+    gap: 16px;
+  }
+  
+  .cartItem {
+    padding: 16px;
+  }
+  
+  .checkout {
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .countHandler {
+    gap: 8px;
+  }
+  
+  .countHandler button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .countHandler input {
+    width: 45px;
+    height: 32px;
+  }
 }
