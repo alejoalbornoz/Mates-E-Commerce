@@ -37,7 +37,7 @@
 
 .textHome {
   font-family: "Lexend", sans-serif;
-  width: 70%;
+  width: 60%;
   z-index: 2;
 }
 
@@ -53,40 +53,44 @@
 }
 
 .textHome h1 {
-  font-size: 5.5rem;
+  font-size: 5rem;
   font-family: "PT Sans", sans-serif;
   width: 80%;
   font-weight: 700;
   font-style: italic;
   color: #ffffff;
   text-align: left;
-  text-shadow: 0 0 10px rgba(255, 235, 175, 0.3);
+  text-shadow: 0 0 10px rgba(255, 235, 175, 0.2);
 }
 
 .textHome p {
-  font-size: 2rem;
+  font-size: 1.4rem;
   width: 70%;
   color: #ffffffb6;
   text-align: left;
+  margin-top: 30px;
 }
 
-.featuresHome {
-  gap: 20px;
+.trustIcons {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
 }
 
-.featureItem {
+.trustItem {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: #ffffff;
   font-family: "Lexend", sans-serif;
+  font-size: 1rem;
 }
 
-.featureItem i {
-  font-size: 1.2rem;
+.trustItem i {
+  font-size: 1.5rem;
+  color: #ffb700;
 }
 
-/* Botones */
 .btnShopHome {
   display: flex;
   margin-top: 50px;
@@ -124,28 +128,6 @@
 .btnExplore:hover {
   background-color: #ffffff1a;
   transform: scale(1.05);
-}
-
-
-.trustIcons {
-  display: flex;
-  gap: 30px;
-  margin-top: 30px;
-  justify-content: flex-start;
-}
-
-.trustItem {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  font-family: "Lexend", sans-serif;
-  font-size: 1rem;
-}
-
-.trustItem i {
-  font-size: 1.5rem;
-  color: #ffb700;
 }
 
 /* Sección de servicios inferiores */

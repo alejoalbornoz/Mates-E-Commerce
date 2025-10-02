@@ -6,48 +6,43 @@ function Section() {
   const ofertas = [
     {
       id: 1,
-      nombre: "2x1 Mate Personalizado",
-      descripcion: "Lleva dos mates personalizados con tu diseño favorito por el precio de uno.",
-      precio: 40000,
-      precioAnterior: 80000,
-      imagen: "src/assets/images/mateoferta.png",
-      badge: "2x1"
-    },
-    {
-      id: 2,
-      nombre: "Mate de Algarrobo",
-      descripcion: "Mate artesanal de algarrobo con detalles únicos y acabado premium.",
+      nombre: "Mate Imperial",
+      descripcion: "Mate con detalles únicos y acabado premium.",
       precio: 28000,
       precioAnterior: 35000,
-      imagen: "src/assets/images/matealgarrobo.png",
-      badge: "20% OFF"
+      imagen: "src/assets/images/mateimperialng.png",
+      badge: "20% OFF",
     },
-    {
-      id: 3,
+     {
+      id: 2,
       nombre: "3x2 Yerba Canarias 1kg",
       descripcion: "Promoción especial: compra tres paquetes y paga solo dos.",
       precio: 20000,
       precioAnterior: 30000,
       imagen: "src/assets/images/ofertayerba.png",
-      badge: "3x2"
+      badge: "3x2",
     },
     {
-      id: 4,
-      nombre: "Bombilla de Alpaca",
-      descripcion: "Bombilla premium de alpaca con filtro mejorado y diseño ergonómico.",
+      id: 3,
+     nombre: "Bombilla de Alpaca",
+      descripcion:
+        "Bombilla premium de alpaca con filtro mejorado y diseño ergonómico.",
       precio: 24000,
       precioAnterior: 32000,
       imagen: "src/assets/images/bombillaoferta2.png",
-      badge: "25% OFF"
-    }
+      badge: "25% OFF",
+    },
+    
+   
+
   ];
 
   // Función para formatear precios
   const formatearPrecio = (precio) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
-      minimumFractionDigits: 0
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      minimumFractionDigits: 0,
     }).format(precio);
   };
 
@@ -120,7 +115,7 @@ function Section() {
             El sabor <br /> del ritual <br />
             argentino <br /> en tu casa
           </h1>
-          <button>Ver productos</button>
+          
         </div>
         <div className="imageBanner">
           <img src="src/assets/images/personamate500.png" alt="" />
@@ -129,51 +124,60 @@ function Section() {
 
       {/* PRODUCTOS CATEGORIAS PRODUCTOS */}
 
-      <div className="containerProductsMates">
-        <div className="productMate">
-          <div className="imageMate">
-            <div className="headerCenter"></div>
-
-            <div className="containerCategorias">
-              <div className="contentGrid">
-                <h2>Mates</h2>
-                <img
-                  src="./src/assets/images/mateimperial.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
+      <div className="categories-section">
+        <div className="categories-header">
+          <h2 className="categories-title">Explora Nuestras Categorías</h2>
+          <p className="categories-subtitle">
+            Descubre todo lo que necesitas para vivir la auténtica experiencia
+            del mate
+          </p>
         </div>
 
-        <div className="productMate">
-          <div className="imageMate">
-            <div className="headerCenter"></div>
-
-            <div className="containerCategorias">
-              <div className="contentGrid">
-                <h2>Yerbas</h2>
-                <img
-                  src="./src/assets/images/yerbacanarias.png"
-                  alt=""
-                />
-              </div>
+        <div className="categories-grid">
+          <div className="category-card">
+            <div className="category-image-container">
+              <img
+                src="./src/assets/images/matetorpedoliso.png"
+                alt="Mates"
+                className="category-image"
+              />
+              <div className="category-overlay"></div>
+            </div>
+            <div className="category-content">
+              <h3 className="category-name">Mates</h3>
+             
             </div>
           </div>
-        </div>
 
-        <div className="productMate">
-          <div className="imageMate">
-            <div className="headerCenter"></div>
+          <div className="category-card">
+            <div className="category-image-container">
+              <img
+                src="./src/assets/images/yerbacanarias.png"
+                alt="Yerbas"
+                className="category-image"
+              />
+              <div className="category-overlay"></div>
+            </div>
+            <div className="category-content">
+              <h3 className="category-name">Yerbas</h3>
+              
+              
+            </div>
+          </div>
 
-            <div className="containerCategorias">
-              <div className="contentGrid">
-                <h2>Bombillas</h2>
-                <img
-                  src="./src/assets/images/bombillapicoloro.png"
-                  alt=""
-                />
-              </div>
+          <div className="category-card">
+            <div className="category-image-container">
+              <img
+                src="./src/assets/images/bombillapicoloro.png"
+                alt="Bombillas"
+                className="category-image"
+              />
+              <div className="category-overlay"></div>
+            </div>
+            <div className="category-content">
+              <h3 className="category-name">Bombillas</h3>
+          
+        
             </div>
           </div>
         </div>
@@ -182,29 +186,32 @@ function Section() {
       {/* PRODUCTOS DESTACADOS - VERSIÓN MEJORADA */}
       <section className="ofertas-section">
         <div className="ofertas-header">
-          <h2 className="ofertas-title">Lo más elegido por nuestros clientes</h2>
+          <h2 className="ofertas-title">
+            Lo más elegido por nuestros clientes
+          </h2>
           <p className="ofertas-subtitle">
-            Descubre nuestras promociones exclusivas en productos de mate. Calidad premium a precios irresistibles.
+            Descubre nuestras promociones exclusivas en productos de mate.
+            Calidad premium a precios irresistibles.
           </p>
         </div>
-        
+
         <div className="ofertas-grid">
-          {ofertas.map(oferta => (
+          {ofertas.map((oferta) => (
             <div key={oferta.id} className="oferta-card">
               <div className="oferta-badge">{oferta.badge}</div>
-              
+
               <div className="oferta-image-container">
-                <img 
-                  src={oferta.imagen} 
+                <img
+                  src={oferta.imagen}
                   alt={oferta.nombre}
                   className="oferta-image"
                 />
               </div>
-              
+
               <div className="oferta-content">
                 <h3 className="oferta-name">{oferta.nombre}</h3>
                 <p className="oferta-description">{oferta.descripcion}</p>
-                
+
                 <div className="oferta-price-container">
                   <div>
                     {oferta.precioAnterior && (
@@ -216,8 +223,6 @@ function Section() {
                       {formatearPrecio(oferta.precio)}
                     </span>
                   </div>
-                  
-                  
                 </div>
               </div>
             </div>
