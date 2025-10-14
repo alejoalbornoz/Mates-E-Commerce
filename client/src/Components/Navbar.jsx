@@ -7,69 +7,88 @@ import { useAuth } from "../Context/AuthContext";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout } = useAuth();
-  console.log("Usuario logeado", user);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="menubar">
       <nav className="enlaces">
-        <a href="/" className="btn-inicio">
-          El Rincón del Mate
-        </a>
+        {/* Logo/Brand */}
+        <Link to="/" className="brand">
+          <span className="brand-text">El Rincón del Mate</span>
+        </Link>
 
-        {/* Botón hamburguesa */}
-        <div className="menuToggle" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Enlaces */}
-        <ul className={`ulBase ${menuOpen ? "menuActive" : ""}`}>
+        {/* Navegación principal */}
+        <ul className={`nav-links ${menuOpen ? "nav-active" : ""}`}>
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/" onClick={closeMenu}>Inicio</Link>
           </li>
           <li>
-            <Link to="/productos">Productos</Link>
+            <Link to="/productos" onClick={closeMenu}>Productos</Link>
           </li>
           <li>
-            <Link to="/contacto">Contacto</Link>
+            <Link to="/contacto" onClick={closeMenu}>Contacto</Link>
           </li>
         </ul>
 
-        {/* Iconos usuario y carrito */}
-        <div className="btnmenu">
+        {/* Acciones de usuario */}
+        <div className="user-actions">
           {!user && (
-            <Link to="/login" className="bi bi-person" title="Login"></Link>
+            <Link to="/login" className="nav-icon" title="Iniciar Sesión">
+              <i className="bi bi-person"></i>
+              <span className="tooltip">Iniciar Sesión</span>
+            </Link>
           )}
-          <Link to="/carrito" className="bi bi-cart3" title="Carrito"></Link>
+          
+          <Link to="/carrito" className="nav-icon" title="Carrito">
+            <i className="bi bi-cart3"></i>
+            <span className="tooltip">Carrito</span>
+          </Link>
+
           {user?.role === "admin" && (
-            <Link
-              to="/dashboard"
-              className="bi bi-laptop"
-              title="Dashboard"
-            ></Link>
+            <Link to="/dashboard" className="nav-icon" title="Dashboard">
+              <i className="bi bi-laptop"></i>
+              <span className="tooltip">Dashboard</span>
+            </Link>
           )}
 
-          {user ? (
+          {user && (
             <>
-              <Link
-                to="/settings"
-                className="bi bi-gear"
-                title="Settings"
-              ></Link>
-              <Link
-                to="/"
-                className="bi bi-door-closed"
-                title="Logout"
-                onClick={() => logout()}
-              ></Link>
+              <Link to="/settings" className="nav-icon" title="Configuración">
+                <i className="bi bi-gear"></i>
+                <span className="tooltip">Configuración</span>
+              </Link>
+              <button 
+                className="nav-icon logout-btn" 
+                title="Cerrar Sesión"
+                onClick={() => {
+                  logout();
+                  closeMenu();
+                }}
+              >
+                <i className="bi bi-box-arrow-right"></i>
+                <span className="tooltip">Cerrar Sesión</span>
+              </button>
             </>
-          ) : null}
+          )}
         </div>
+
+        {/* Botón hamburguesa */}
+        <button 
+          className={`menu-toggle ${menuOpen ? "toggle-active" : ""}`} 
+          onClick={toggleMenu}
+          aria-label="Menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </div>
   );

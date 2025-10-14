@@ -60,7 +60,8 @@
   font-style: italic;
   color: #ffffff;
   text-align: left;
-  text-shadow: 0 0 10px rgba(255, 235, 175, 0.2);
+  text-shadow: 0 0 10px rgba(255, 235, 175, 0.1);
+  line-height: 0.9;
 }
 
 .textHome p {
@@ -68,7 +69,13 @@
   width: 70%;
   color: #ffffffb6;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 80px;
+}
+
+.containerExtras{
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-40px);
 }
 
 .trustIcons {

@@ -108,31 +108,6 @@ function UpdateProfile() {
             </div>
           </form>
         )}
-
-        {showPassForm && (
-          <form onSubmit={handlePasswordChange} className="update-form">
-            <input
-              type="password"
-              placeholder="Nueva contraseña"
-              value={pass1}
-              onChange={(e) => setPass1(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Confirmar contraseña"
-              value={pass2}
-              onChange={(e) => setPass2(e.target.value)}
-              required
-            />
-            <div className="actions">
-              <button type="submit">Guardar contraseña</button>
-              <button type="button" onClick={() => setShowPassForm(false)}>
-                Cancelar
-              </button>
-            </div>
-          </form>
-        )}
       </div>
 
       {/* Contraseña */}
@@ -148,7 +123,7 @@ function UpdateProfile() {
         </div>
 
         {showPassForm && (
-          <form onSubmit={handlePasswordChange}>
+          <form onSubmit={handlePasswordChange} className="update-form">
             <input
               type="password"
               placeholder="Nueva contraseña"

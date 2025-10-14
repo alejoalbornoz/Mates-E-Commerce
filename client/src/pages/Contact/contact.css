@@ -29,7 +29,7 @@
 .containerInfo {
   max-width: 1200px;
   width: 100%;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.041);
   padding: 3rem;
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -42,14 +42,14 @@
 
 .contactHeader h1 {
   font-size: 2.5rem;
-  color: var(--primary-color);
+  color: white;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .contactHeader p {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: white;
 }
 
 /* Contenedor principal */
