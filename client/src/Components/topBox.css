@@ -7,8 +7,12 @@
 .topBox .list .listItem {
   display: flex;
   align-items: center;
+
   justify-content: space-between;
   margin-bottom: 30px;
+}
+.topBox h1 {
+  color: white;
 }
 
 .user {
@@ -39,7 +43,7 @@
   font-size: 12px;
 }
 
- .amount {
+.amount {
   font-weight: 500;
   color: white;
 }

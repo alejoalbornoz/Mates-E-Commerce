@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../Context/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import "./LoginPage.css"
+import "./LoginPage.css";
 
 function LoginPage() {
   const {
@@ -12,7 +12,7 @@ function LoginPage() {
   } = useForm();
 
   const { signin, errors: loginErrors, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
     signin(data);
@@ -20,7 +20,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/productos");
+      window.location.href = "/productos";
     }
   }, [isAuthenticated]);
 
@@ -58,7 +58,7 @@ function LoginPage() {
           </button>
         </form>
         <p className="login-footer">
-          ¿No tenés cuenta aún? 
+          ¿No tenés cuenta aún?
           <Link to="/register" className="register-link">
             Crear cuenta
           </Link>

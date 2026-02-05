@@ -48,7 +48,7 @@ const BigChartBox = () => {
               type="monotone"
               dataKey="total"
               stroke="#9cd884ff"
-              fill="#9cd884ff"
+              fill="rgb(255, 255, 255)"
             />
           </AreaChart>
         </ResponsiveContainer>
